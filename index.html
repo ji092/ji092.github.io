@@ -1,0 +1,2474 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jiyoung.dev — AI · Fullstack · Infra Developer</title>
+    <meta name="description" content="AI 모델 서빙부터 인프라 배포까지, 서비스의 시작과 끝을 연결하는 풀스택 개발자 포트폴리오" />
+
+    <!--
+═══════════════════════════════════════════════════════════════
+  ✏️ 수정 
+  1. 프로젝트 이미지  : 같은 폴더에 project1.png ~ project4.png 업로드
+  2. 시연영상/발표자료: 각 버튼의 href="#" 을 유튜브 링크, PDF 파일 경로로 교체
+  3. ✏️EDIT 주석     : 핵심 성과 / 트러블슈팅 탭 내용은 예시 텍스트이니 실제 내용으로 교체
+══════════════════════════════════════════════════════════════
+-->
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ─────────────────────────────────────────
+   Design tokens
+───────────────────────────────────────── */
+        :root {
+            --bg: #ffffff;
+            --bg-soft: #f7f7f5;
+            --ink: #121316;
+            --ink-soft: #3b3e44;
+            --gray: #71757c;
+            --gray-soft: #a3a7ad;
+            --line: #e9e9e6;
+            --beige: #c2a064;
+            /* warm beige accent */
+            --beige-soft: #f6efe2;
+            --beige-line: #e9dcc2;
+            --radius: 14px;
+            --radius-sm: 9px;
+            --nav-h: 72px;
+            --font-sans: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
+            --font-mono: "JetBrains Mono", "Pretendard Variable", monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-h) + 16px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--beige);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+        }
+
+        /* section eyebrow : 01 ──── ABOUT ME */
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            letter-spacing: .22em;
+            color: var(--gray-soft);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .eyebrow::after {
+            content: none;
+        }
+
+        .eyebrow .rule {
+            width: 90px;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-size: clamp(34px, 5vw, 56px);
+            font-weight: 800;
+            letter-spacing: -.03em;
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+
+        .section-lead {
+            max-width: 640px;
+            font-size: 17px;
+            color: var(--ink-soft);
+        }
+
+        /* ─────────────────────────────────────────
+   Navbar
+───────────────────────────────────────── */
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 100;
+            height: var(--nav-h);
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            transition: background .3s, border-color .3s, backdrop-filter .3s;
+        }
+
+        .nav.scrolled {
+            background: rgba(255, 255, 255, .82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom-color: var(--line);
+        }
+
+        .nav-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -.01em;
+        }
+
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            background: var(--ink);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nav-links a {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 15px;
+            color: var(--gray);
+            font-weight: 500;
+            transition: color .2s, background .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--ink);
+            background: var(--bg-soft);
+        }
+
+        .nav-links a.active {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .nav-gh {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            color: var(--ink);
+            transition: background .2s;
+        }
+
+        .nav-gh:hover {
+            background: var(--bg-soft);
+        }
+
+        .btn-cta {
+            background: var(--ink);
+            color: #fff;
+            padding: 11px 22px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 1px solid var(--ink);
+            transition: opacity .2s;
+        }
+
+        .btn-cta:hover {
+            opacity: .82;
+        }
+
+        /* mobile hamburger */
+        .nav-burger {
+            display: none;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .nav-burger span {
+            width: 20px;
+            height: 2px;
+            background: var(--ink);
+            border-radius: 2px;
+            transition: transform .25s, opacity .25s;
+        }
+
+        .nav-burger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-burger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-burger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: var(--nav-h);
+            left: 0;
+            right: 0;
+            z-index: 99;
+            background: rgba(255, 255, 255, .96);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line);
+            padding: 14px 24px 24px;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 14px 8px;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--ink-soft);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a.active {
+            color: var(--ink);
+        }
+
+        /* ─────────────────────────────────────────
+   Hero
+───────────────────────────────────────── */
+        .hero {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            padding: calc(var(--nav-h) + 40px) 0 60px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 64px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-soft);
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 8px 18px;
+            margin-bottom: 34px;
+        }
+
+        .hero-badge .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--beige);
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 800;
+            letter-spacing: -.035em;
+            line-height: 1.18;
+            margin-bottom: 26px;
+        }
+
+        .hero h1 .name {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .name::after {
+            content: "";
+            position: absolute;
+            left: 2px;
+            right: 2px;
+            bottom: 4px;
+            height: 4px;
+            background: var(--beige-line);
+            border-radius: 2px;
+        }
+
+        .hero-sub {
+            font-size: 19px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 54px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--ink);
+            color: #fff;
+            padding: 15px 28px;
+            border-radius: 11px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid var(--ink);
+            transition: opacity .2s;
+        }
+
+        .btn-primary:hover {
+            opacity: .82;
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: #fff;
+            color: var(--ink);
+            padding: 15px 28px;
+            border-radius: 11px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid var(--line);
+            transition: border-color .2s, background .2s;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--ink);
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 26px;
+            flex-wrap: wrap;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            color: var(--gray);
+        }
+
+        .hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* avatar card */
+        .hero-visual {
+            position: relative;
+        }
+
+        .avatar-card {
+            position: relative;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            overflow: visible;
+            aspect-ratio: 4/4.6;
+            display: grid;
+            place-items: center;
+        }
+
+        .avatar-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 26px;
+        }
+
+        .avatar-fallback {
+            display: grid;
+            place-items: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .avatar-fallback .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, var(--beige-soft), #fff);
+            border: 1px solid var(--beige-line);
+            display: grid;
+            place-items: center;
+            margin: 0 auto;
+            font-family: var(--font-mono);
+            font-size: 30px;
+            color: var(--beige);
+            font-weight: 500;
+        }
+
+        .avatar-fallback p {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--gray-soft);
+        }
+
+        .chip-float {
+            position: absolute;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 9px 16px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-soft);
+            animation: floaty 5s ease-in-out infinite;
+        }
+
+        .chip-float .ico {
+            color: var(--beige);
+            display: inline-flex;
+        }
+
+        .chip-1 {
+            top: 9%;
+            left: -7%;
+            animation-delay: 0s;
+        }
+
+        .chip-2 {
+            top: 38%;
+            right: -9%;
+            animation-delay: 1.4s;
+        }
+
+        .chip-3 {
+            bottom: 8%;
+            left: -3%;
+            animation-delay: 2.8s;
+        }
+
+        @keyframes floaty {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .scroll-hint {
+            position: absolute;
+            left: 50%;
+            bottom: 28px;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: .3em;
+            color: var(--gray-soft);
+        }
+
+        .scroll-hint .arrow {
+            animation: bob 1.8s ease-in-out infinite;
+        }
+
+        @keyframes bob {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(6px)
+            }
+        }
+
+        /* ─────────────────────────────────────────
+   01 About
+───────────────────────────────────────── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr .9fr;
+            gap: 56px;
+            align-items: start;
+            margin-top: 40px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: var(--ink-soft);
+            line-height: 1.85;
+            margin-bottom: 22px;
+        }
+
+        .about-text p strong {
+            color: var(--ink);
+        }
+
+        .skill-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 38px;
+        }
+
+        .skill-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 30px 28px;
+            transition: border-color .25s, transform .25s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--beige-line);
+            transform: translateY(-3px);
+        }
+
+        .skill-card .ico {
+            width: 46px;
+            height: 46px;
+            border-radius: 11px;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            display: grid;
+            place-items: center;
+            margin-bottom: 20px;
+            color: var(--ink);
+        }
+
+        .skill-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: -.01em;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* contact sticky card */
+        .contact-card {
+            position: sticky;
+            top: calc(var(--nav-h) + 28px);
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .contact-head {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .contact-head .pic {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--beige-soft);
+            border: 1px solid var(--beige-line);
+            display: grid;
+            place-items: center;
+            font-family: var(--font-mono);
+            color: var(--beige);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .contact-head .pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact-head h3 {
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .contact-head p {
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            color: var(--gray);
+            margin-top: 3px;
+        }
+
+        .contact-label {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            letter-spacing: .22em;
+            color: var(--gray-soft);
+            margin-bottom: 14px;
+        }
+
+        .contact-links li a {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 12px 10px;
+            margin: 0 -10px;
+            border-radius: 10px;
+            transition: background .2s;
+        }
+
+        .contact-links li a:hover {
+            background: var(--bg-soft);
+        }
+
+        .contact-links .ci {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            display: grid;
+            place-items: center;
+            color: var(--ink);
+            flex-shrink: 0;
+        }
+
+        .contact-links .cn {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .contact-links .cv {
+            margin-left: auto;
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            color: var(--gray);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-align: right;
+        }
+
+        .btn-resume {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            width: 100%;
+            margin-top: 26px;
+            background: var(--ink);
+            color: #fff;
+            padding: 15px;
+            border-radius: 11px;
+            font-size: 15.5px;
+            font-weight: 600;
+            border: 1px solid var(--ink);
+            transition: opacity .2s;
+        }
+
+        .btn-resume:hover {
+            opacity: .82;
+        }
+
+        /* ─────────────────────────────────────────
+   02 Projects
+───────────────────────────────────────── */
+        #projects {
+            background: var(--bg);
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: .92fr 1.08fr;
+            gap: 64px;
+            align-items: start;
+            padding: 72px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .project:first-of-type {
+            border-top: 1px solid var(--line);
+            margin-top: 56px;
+        }
+
+        .project-media {
+            position: relative;
+        }
+
+        .project-thumb {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            aspect-ratio: 4/3.1;
+            background: linear-gradient(150deg, #faf6ee, #f1e7d4);
+            display: grid;
+            place-items: center;
+        }
+
+        .project-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb-fallback {
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            color: var(--beige);
+            text-align: center;
+            line-height: 2;
+        }
+
+        .date-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            z-index: 2;
+            background: rgba(255, 255, 255, .92);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 6px 13px;
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            color: var(--ink-soft);
+        }
+
+        .project-btns {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .pbtn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 11px 18px;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--ink);
+            transition: border-color .2s;
+        }
+
+        .pbtn:hover {
+            border-color: var(--ink);
+        }
+
+        .project-num {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            letter-spacing: .24em;
+            color: var(--gray-soft);
+            margin-bottom: 10px;
+        }
+
+        .project h3 {
+            font-size: clamp(28px, 3vw, 38px);
+            font-weight: 800;
+            letter-spacing: -.025em;
+            margin-bottom: 10px;
+        }
+
+        .project-tagline {
+            font-size: 17.5px;
+            color: var(--ink-soft);
+            margin-bottom: 16px;
+        }
+
+        .project-role {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            color: var(--gray);
+            margin-bottom: 22px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 9px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-soft);
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 7px 13px;
+        }
+
+        /* tabs */
+        .tabs {
+            display: inline-flex;
+            gap: 4px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 5px;
+            margin-bottom: 24px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            padding: 9px 18px;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--gray);
+            transition: background .2s, color .2s;
+        }
+
+        .tab-btn.active {
+            background: var(--ink);
+            color: #fff;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .checklist li {
+            display: flex;
+            gap: 13px;
+            align-items: flex-start;
+            font-size: 16.5px;
+            color: var(--ink-soft);
+            padding: 9px 0;
+        }
+
+        .checklist .ck {
+            flex-shrink: 0;
+            margin-top: 4px;
+            color: var(--gray-soft);
+        }
+
+        /* ─────────────────────────────────────────
+   03 Lab / Ideas
+───────────────────────────────────────── */
+        #lab {
+            background: var(--bg-soft);
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+            margin-top: 56px;
+        }
+
+        .lab-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 36px 34px;
+            transition: border-color .25s, transform .25s;
+        }
+
+        .lab-card:hover {
+            border-color: var(--beige-line);
+            transform: translateY(-3px);
+        }
+
+        .lab-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .lab-kind {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: .24em;
+            color: var(--gray-soft);
+        }
+
+        .status {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            letter-spacing: .12em;
+            border-radius: 999px;
+            padding: 6px 14px;
+            border: 1px solid var(--line);
+            background: var(--bg-soft);
+            color: var(--gray);
+        }
+
+        .status.warm {
+            background: var(--beige-soft);
+            border-color: var(--beige-line);
+            color: #9a7b3f;
+        }
+
+        .lab-card h3 {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            margin-bottom: 8px;
+        }
+
+        .lab-tagline {
+            font-size: 16px;
+            color: var(--ink-soft);
+            margin-bottom: 16px;
+        }
+
+        .lab-desc {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 26px;
+        }
+
+        .arch-label {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            letter-spacing: .22em;
+            color: var(--gray-soft);
+            margin-bottom: 12px;
+        }
+
+        .arch-tree li {
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            color: var(--ink-soft);
+            padding: 5px 0;
+            display: flex;
+            gap: 10px;
+            line-height: 1.6;
+        }
+
+        .arch-tree li::before {
+            content: "└";
+            color: var(--gray-soft);
+            flex-shrink: 0;
+        }
+
+        .lab-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        /* ─────────────────────────────────────────
+   04 Tech Stack
+───────────────────────────────────────── */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: 1.35fr .85fr;
+            gap: 30px;
+            align-items: start;
+            margin-top: 56px;
+        }
+
+        .stack-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .stack-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 30px 28px;
+        }
+
+        .stack-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .stack-head h3 {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -.015em;
+        }
+
+        .stack-head span {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            letter-spacing: .22em;
+            color: var(--gray-soft);
+        }
+
+        .stack-sub {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 22px;
+        }
+
+        .stack-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 0;
+            font-size: 15.5px;
+            font-weight: 600;
+            color: var(--ink-soft);
+        }
+
+        .lvl {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        .lvl::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+        }
+
+        .lvl.daily::before {
+            background: var(--ink);
+        }
+
+        .lvl.familiar::before {
+            background: var(--gray-soft);
+        }
+
+        .lvl.learning::before {
+            background: var(--line);
+            border: 1px solid var(--gray-soft);
+            width: 6px;
+            height: 6px;
+        }
+
+        .lvl-legend {
+            display: flex;
+            gap: 24px;
+            margin-top: 28px;
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            color: var(--gray);
+            grid-column: 1 / -1;
+        }
+
+        .lvl-legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lvl-legend i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .lvl-legend .d {
+            background: var(--ink);
+        }
+
+        .lvl-legend .f {
+            background: var(--gray-soft);
+        }
+
+        .lvl-legend .l {
+            background: var(--line);
+            border: 1px solid var(--gray-soft);
+            width: 6px;
+            height: 6px;
+        }
+
+        /* beyond code */
+        .beyond-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 34px 32px;
+            position: sticky;
+            top: calc(var(--nav-h) + 28px);
+        }
+
+        .beyond-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .beyond-head h3 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -.015em;
+        }
+
+        .beyond-head .spark {
+            color: var(--beige);
+        }
+
+        .beyond-sub {
+            font-size: 14.5px;
+            color: var(--gray);
+            margin-bottom: 26px;
+            line-height: 1.7;
+        }
+
+        .cert {
+            display: flex;
+            gap: 16px;
+            padding: 20px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .cert .ci {
+            width: 44px;
+            height: 44px;
+            border-radius: 11px;
+            flex-shrink: 0;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            display: grid;
+            place-items: center;
+            color: var(--ink);
+        }
+
+        .cert-body {
+            flex: 1;
+        }
+
+        .cert-top {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .cert-top h4 {
+            font-size: 16.5px;
+            font-weight: 700;
+        }
+
+        .cert-top span {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--gray-soft);
+        }
+
+        .cert-org {
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            color: var(--gray);
+            margin: 3px 0 7px;
+        }
+
+        .cert-desc {
+            font-size: 14px;
+            color: var(--ink-soft);
+            line-height: 1.65;
+        }
+
+        .quote {
+            margin-top: 28px;
+            padding: 26px 26px 26px 30px;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            position: relative;
+            font-size: 15.5px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+
+        .quote .qm {
+            position: absolute;
+            top: 18px;
+            left: -1px;
+            font-size: 42px;
+            line-height: 1;
+            color: var(--beige-line);
+            font-family: Georgia, serif;
+            transform: translateX(-40%);
+            background: var(--bg-soft);
+            display: none;
+        }
+
+        .quote strong {
+            color: var(--ink);
+        }
+
+        .quote::before {
+            content: "“";
+            font-family: Georgia, serif;
+            font-size: 40px;
+            color: var(--beige);
+            line-height: 0;
+            vertical-align: -14px;
+            margin-right: 6px;
+        }
+
+        /* ─────────────────────────────────────────
+   Footer
+───────────────────────────────────────── */
+        .footer {
+            background: var(--bg-soft);
+            border-top: 1px solid var(--line);
+            padding: 110px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr .7fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .footer-cta {
+            font-size: clamp(34px, 4.6vw, 58px);
+            font-weight: 800;
+            letter-spacing: -.03em;
+            line-height: 1.25;
+            margin-bottom: 36px;
+        }
+
+        .footer-mail {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 21px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 3px;
+            transition: color .2s, border-color .2s;
+        }
+
+        .footer-mail:hover {
+            color: var(--beige);
+            border-color: var(--beige);
+        }
+
+        .footer-elsewhere .contact-label {
+            margin-bottom: 20px;
+        }
+
+        .elsewhere-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 28px;
+        }
+
+        .elsewhere-grid a {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            padding: 11px 0;
+            font-size: 15.5px;
+            font-weight: 600;
+            color: var(--ink-soft);
+            transition: color .2s;
+        }
+
+        .elsewhere-grid a:hover {
+            color: var(--ink);
+        }
+
+        .elsewhere-grid a svg {
+            color: var(--gray);
+        }
+
+        .footer-bottom {
+            margin-top: 90px;
+            padding: 30px 0 36px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            color: var(--gray);
+        }
+
+        /* reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ─────────────────────────────────────────
+   Responsive
+───────────────────────────────────────── */
+        @media (max-width:1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 56px;
+            }
+
+            .hero-visual {
+                max-width: 440px;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .chip-1 {
+                left: -2%;
+            }
+
+            .chip-2 {
+                right: -3%;
+            }
+
+            .chip-3 {
+                left: 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                position: static;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .stack-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .beyond-card {
+                position: static;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        @media (max-width:860px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-right .btn-cta {
+                display: none;
+            }
+
+            .nav-burger {
+                display: flex;
+                margin-left: auto;
+            }
+
+            .nav-right {
+                margin-left: 0;
+            }
+
+            .nav-gh {
+                margin-left: auto;
+            }
+
+            .nav-inner {
+                gap: 14px;
+            }
+        }
+
+        @media (max-width:720px) {
+            .container {
+                padding: 0 22px;
+            }
+
+            .section {
+                padding: 84px 0;
+            }
+
+            .skill-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .lab-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stack-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: calc(var(--nav-h) + 24px);
+            }
+
+            .hero-sub br {
+                display: none;
+            }
+
+            .elsewhere-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scroll-hint {
+                display: none;
+            }
+
+            .tabs {
+                width: 100%;
+            }
+
+            .tab-btn {
+                flex: 1;
+                padding: 9px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════ NAVBAR ═══════════ -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+            <a class="brand" href="#hero">
+                <span class="brand-mark">JY</span>
+                jiyoung.dev
+            </a>
+
+            <nav class="nav-links" id="navLinks" aria-label="주요 메뉴">
+                <a href="#about" data-spy>About</a>
+                <a href="#projects" data-spy>Projects</a>
+                <a href="#lab" data-spy>Lab / Ideas</a>
+                <a href="#stack" data-spy>Tech Stack</a>
+            </nav>
+
+            <div class="nav-right">
+                <a class="nav-gh" href="https://github.com/ji092" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                    </svg>
+                </a>
+                <a class="btn-cta" href="#contact-footer">Get in touch</a>
+                <button class="nav-burger" id="burger" aria-label="메뉴 열기" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" data-spy>About</a>
+        <a href="#projects" data-spy>Projects</a>
+        <a href="#lab" data-spy>Lab / Ideas</a>
+        <a href="#stack" data-spy>Tech Stack</a>
+        <a href="#contact-footer">Get in touch ↗</a>
+    </div>
+
+    <main>
+
+        <!-- ═══════════ HERO ═══════════ -->
+        <section class="hero" id="hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="hero-badge"><span class="dot"></span>Available for new projects · 2026</span>
+                    <h1>안녕하세요,<br>개발자 <span class="name">김지영</span>입니다.</h1>
+                    <p class="hero-sub">AI 모델 서빙부터 인프라 배포까지,<br>서비스의 시작과 끝을 연결하는 풀스택 개발자</p>
+
+                    <div class="hero-actions">
+                        <a class="btn-primary" href="#projects">View Projects
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.2">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                        </a>
+                        <a class="btn-ghost" href="#about">About me
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <span>📍 Suwon, South Korea</span>
+                        <span>✉ ji092.zip&#64;gmail&#46;com</span>
+                        <span>🕘 KST (UTC+9)</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="avatar-card">
+                        <!-- ✏️ avatar.png 를 같은 폴더에 업로드하면 자동 표시됩니다 -->
+                        <img src="avatar.png" alt="김지영 3D 아바타"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
+                        <div class="avatar-fallback" style="display:none;">
+                            <div class="circle">JY</div>
+                            <p>avatar.png 를<br>업로드하면 표시됩니다</p>
+                        </div>
+
+                        <span class="chip-float chip-1"><span class="ico">⚙</span>AI Serving</span>
+                        <span class="chip-float chip-2"><span class="ico">▤</span>Fullstack</span>
+                        <span class="chip-float chip-3"><span class="ico">☁</span>Infra &amp; Deploy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-hint">
+                SCROLL
+                <span class="arrow">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 4v16M6 14l6 6 6-6" />
+                    </svg>
+                </span>
+            </div>
+        </section>
+
+        <!-- ═══════════ 01 ABOUT ═══════════ -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="eyebrow reveal">01 <span class="rule"></span> ABOUT ME</div>
+                <h2 class="section-title reveal">나는 어떤 개발자인가</h2>
+
+                <div class="about-grid">
+                    <div>
+                        <div class="about-text reveal">
+                            <p>저는 한 사람이 <strong>기획·모델·백엔드·프론트·인프라</strong>를 한 줄로 꿰뚫는 개발자를 지향합니다. 모델 한 줄을 위해 데이터셋을 다듬는
+                                일도, 새벽에 EC2 로그를 들여다보는 일도 똑같이 즐깁니다.</p>
+                            <p>모델을 만들고, 백엔드를 짜고, 인프라에 올리고, 사용자에게 닿게 하는 모든 과정을 직접 다루는 것을 좋아합니다. 코드와 시스템뿐 아니라, 사람의 몸과 공간을
+                                다뤄온 경험을 가지고 다양한 도메인에 가장 적합한 기술을 적용하는 개발자를 지향합니다.</p>
+                        </div>
+
+                        <div class="skill-cards">
+                            <div class="skill-card reveal">
+                                <div class="ico">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.7">
+                                        <path
+                                            d="M12 2a4 4 0 0 1 4 4c2.5.5 4 2.5 4 5a5 5 0 0 1-3 4.6V18a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3v-2.4A5 5 0 0 1 4 11c0-2.5 1.5-4.5 4-5a4 4 0 0 1 4-4Z" />
+                                    </svg>
+                                </div>
+                                <h3>AI / ML Serving</h3>
+                                <p>LLM 파인튜닝, RAG 파이프라인, 모델 경량화부터 FastAPI 기반 서빙까지 end-to-end로 다룹니다.</p>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="ico">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.7">
+                                        <path d="M12 3 3 8l9 5 9-5-9-5Z" />
+                                        <path d="m3 13 9 5 9-5" />
+                                    </svg>
+                                </div>
+                                <h3>Fullstack Engineering</h3>
+                                <p>React/Next.js와 Spring·FastAPI를 오가며 도메인 로직과 UI를 한 사람이 끝까지 책임지는 개발을 선호합니다.</p>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="ico">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.7">
+                                        <path d="M18 10a5 5 0 0 0-9.6-1.7A4.5 4.5 0 0 0 6.5 17H18a3.5 3.5 0 0 0 0-7Z" />
+                                    </svg>
+                                </div>
+                                <h3>Infra &amp; DevOps</h3>
+                                <p>Docker, AWS, GitHub Actions, Nginx 기반 CI/CD와 모니터링까지 직접 배포·운영해본 경험을 가지고 있습니다.</p>
+                            </div>
+                            <div class="skill-card reveal">
+                                <div class="ico">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.7">
+                                        <circle cx="12" cy="12" r="9" />
+                                        <path d="m15.5 8.5-2 5-5 2 2-5 5-2Z" />
+                                    </svg>
+                                </div>
+                                <h3>Cross-Domain Insight</h3>
+                                <p>물리치료, 부동산, 인테리어, F&amp;B 등 비기술 도메인의 실무 경험을 코드와 서비스 설계에 그대로 녹입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- sticky contact -->
+                    <aside class="contact-card reveal">
+                        <div class="contact-head">
+                            <div class="pic">
+                                <img src="avatar.png" alt="" onerror="this.remove();" />
+                            </div>
+                            <div>
+                                <h3>Kim Jiyoung</h3>
+                                <p>AI · Fullstack · Infra Developer</p>
+                            </div>
+                        </div>
+
+                        <p class="contact-label">FIND ME ON</p>
+                        <ul class="contact-links">
+                            <li><a href="https://github.com/ji092" target="_blank" rel="noopener">
+                                    <span class="ci"><svg width="17" height="17" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path
+                                                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                        </svg></span>
+                                    <span class="cn">GitHub</span>
+                                    <span class="cv">@ji092 ↗</span>
+                                </a></li>
+                            <li><a href="https://www.notion.so/e172c2546eac8351a5e78147332bc574?v=fd92c2546eac830c8fb088f31be44068&source=copy_link"
+                                    target="_blank" rel="noopener">
+                                    <span class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="1.8">
+                                            <rect x="4" y="3" width="16" height="18" rx="2" />
+                                            <path d="M8 8h8M8 12h8M8 16h5" />
+                                        </svg></span>
+                                    <span class="cn">Notion</span>
+                                    <span class="cv">Learning Log ↗</span>
+                                </a></li>
+                            <li><a href="https://instagram.com/ji0000092" target="_blank" rel="noopener">
+                                    <span class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="1.8">
+                                            <rect x="3" y="3" width="18" height="18" rx="5" />
+                                            <circle cx="12" cy="12" r="4" />
+                                            <circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none" />
+                                        </svg></span>
+                                    <span class="cn">Instagram</span>
+                                    <span class="cv">@ji0000092 ↗</span>
+                                </a></li>
+
+                            <li><a href="mailto:hello@jiyoung.dev">
+                                    <span class="ci"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="1.8">
+                                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                                            <path d="m3 7 9 6 9-6" />
+                                        </svg></span>
+                                    <span class="cn">Email</span>
+                                    <span class="cv">ji092.zip&#64;gmail&#46;com ↗</span>
+                                </a></li>
+                        </ul>
+
+                        <!-- ✏️ resume.pdf 를 같은 폴더에 업로드하세요 -->
+                        <a class="btn-resume" href="resume.pdf" download>
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 3v12M7 11l5 5 5-5M4 21h16" />
+                            </svg>
+                            Download Resume
+                        </a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ 02 PROJECTS ═══════════ -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="eyebrow reveal">02 <span class="rule"></span> PROJECTS</div>
+                <h2 class="section-title reveal">무엇을 만들어 보았는가</h2>
+                <p class="section-lead reveal">4개의 미니 프로젝트. 모두 1인 풀스택으로, 기획부터 배포까지 끝낸 것들만 골랐습니다. 시연 영상과 발표자료, 트러블슈팅까지 같이
+                    볼 수 있어요.</p>
+
+                <!-- ── PROJECT 01 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">01 · 2025.03 — 2025.05</span>
+                            <!-- ✏️ project1.png 업로드 시 자동 표시 -->
+                            <img src="project1.png" alt="RehabMate 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project1.png</span>
+                        </div>
+                        <div class="project-btns">
+                            <!-- ✏️ href 를 실제 링크로 교체하세요 -->
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
+                                </svg>Live Demo</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                </svg>GitHub</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2" />
+                                    <path d="M8 21h8" />
+                                </svg>발표자료</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+                                </svg>시연영상</a>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 01</p>
+                        <h3>RehabMate</h3>
+                        <p class="project-tagline">물리치료 동작 교정 AI 코칭 서비스</p>
+                        <p class="project-role">⚙ 기획 · AI 모델 · 백엔드 · 배포 (1인 풀스택)</p>
+                        <div class="tags">
+                            <span class="tag">MediaPipe</span><span class="tag">FastAPI</span><span
+                                class="tag">React</span><span class="tag">Docker</span><span class="tag">AWS EC2</span>
+                        </div>
+
+                        <div class="tabs" role="tablist">
+                            <button class="tab-btn active" data-tab="p1-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p1-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p1-3" role="tab">트러블슈팅</button>
+                        </div>
+                        <div class="tab-panel active" id="p1-1">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>MediaPipe Pose 기반 실시간 자세 추정 + 각도 계산 룰엔진</li>
+                                <li><span class="ck">✓</span>운동 종목별 보상동작 탐지 알고리즘 직접 설계</li>
+                                <li><span class="ck">✓</span>FastAPI + WebSocket으로 30fps 스트리밍 처리</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p1-2">
+                            <ul class="checklist"><!-- ✏️EDIT 실제 성과로 교체 -->
+                                <li><span class="ck">✓</span>물리치료사 면허 경험을 살려 임상 기준에 맞는 가동범위 평가 설계</li>
+                                <li><span class="ck">✓</span>실사용 테스트에서 보상동작 탐지 정확도 검증 완료</li>
+                                <li><span class="ck">✓</span>기획 → 배포까지 3개월, 1인 풀스택 완주</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p1-3">
+                            <ul class="checklist"><!-- ✏️EDIT 실제 트러블슈팅으로 교체 -->
+                                <li><span class="ck">✓</span>WebSocket 프레임 드랍 → 프레임 샘플링 + 비동기 큐로 지연 개선</li>
+                                <li><span class="ck">✓</span>EC2 t 시리즈 CPU 추론 한계 → ONNX 변환으로 추론 속도 확보</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ── PROJECT 02 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">02 · 2025.01 — 2025.02</span>
+                            <img src="project2.png" alt="EstateRAG 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project2.png</span>
+                        </div>
+                        <div class="project-btns">
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
+                                </svg>Live Demo</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                </svg>GitHub</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2" />
+                                    <path d="M8 21h8" />
+                                </svg>발표자료</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+                                </svg>시연영상</a>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 02</p>
+                        <h3>EstateRAG</h3>
+                        <p class="project-tagline">공인중개사 실무용 RAG 챗봇 — 등기부·시세·계약서 한 번에</p>
+                        <p class="project-role">⚙ 기획 · RAG 파이프라인 · 프론트 · 배포</p>
+                        <div class="tags">
+                            <span class="tag">LangChain</span><span class="tag">PGVector</span><span
+                                class="tag">Next.js</span><span class="tag">Supabase</span><span
+                                class="tag">Vercel</span>
+                        </div>
+
+                        <div class="tabs" role="tablist">
+                            <button class="tab-btn active" data-tab="p2-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p2-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p2-3" role="tab">트러블슈팅</button>
+                        </div>
+                        <div class="tab-panel active" id="p2-1">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>등기부등본·시세·표준계약서 문서 자체 임베딩 파이프라인</li>
+                                <li><span class="ck">✓</span>하이브리드 검색(BM25 + Dense) + 재랭킹 단계 적용</li>
+                                <li><span class="ck">✓</span>출처 인용(citation)을 답변마다 강제로 노출</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p2-2">
+                            <ul class="checklist"><!-- ✏️EDIT -->
+                                <li><span class="ck">✓</span>공인중개사 자격 도메인 지식으로 질의 의도 분류 체계 설계</li>
+                                <li><span class="ck">✓</span>환각(hallucination) 답변 비율을 출처 강제 인용으로 대폭 감소</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p2-3">
+                            <ul class="checklist"><!-- ✏️EDIT -->
+                                <li><span class="ck">✓</span>표 형태 시세 데이터 청킹 깨짐 → 표 전용 파서 + 메타데이터 청킹으로 해결</li>
+                                <li><span class="ck">✓</span>키워드 질의 검색 누락 → BM25 하이브리드 도입으로 리콜 개선</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ── PROJECT 03 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">03 · 2024.11 — 2024.12</span>
+                            <img src="project3.png" alt="BaristaBoard 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project3.png</span>
+                        </div>
+                        <div class="project-btns">
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
+                                </svg>Live Demo</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                </svg>GitHub</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2" />
+                                    <path d="M8 21h8" />
+                                </svg>발표자료</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+                                </svg>시연영상</a>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 03</p>
+                        <h3>BaristaBoard</h3>
+                        <p class="project-tagline">1인 카페 사장님을 위한 메뉴·재고·매출 통합 대시보드</p>
+                        <p class="project-role">⚙ 기획 · 백엔드 · 프론트 · 인프라</p>
+                        <div class="tags">
+                            <span class="tag">Spring Boot</span><span class="tag">MySQL</span><span
+                                class="tag">React</span><span class="tag">Nginx</span><span class="tag">GitHub
+                                Actions</span>
+                        </div>
+
+                        <div class="tabs" role="tablist">
+                            <button class="tab-btn active" data-tab="p3-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p3-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p3-3" role="tab">트러블슈팅</button>
+                        </div>
+                        <div class="tab-panel active" id="p3-1">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>POS 데이터 CSV 자동 파싱 + 일·주·월 단위 매출 분석</li>
+                                <li><span class="ck">✓</span>원두 재고 자동 차감 / 발주 알림 룰</li>
+                                <li><span class="ck">✓</span>GitHub Actions로 빌드 → Docker → EC2 무중단 배포</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p3-2">
+                            <ul class="checklist"><!-- ✏️EDIT -->
+                                <li><span class="ck">✓</span>바리스타 실무 경험 기반 재고·발주 흐름을 그대로 시스템화</li>
+                                <li><span class="ck">✓</span>수기 정산 대비 일일 마감 시간 단축 검증</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p3-3">
+                            <ul class="checklist"><!-- ✏️EDIT -->
+                                <li><span class="ck">✓</span>POS CSV 포맷 편차 → 파서 어댑터 패턴으로 기기별 대응</li>
+                                <li><span class="ck">✓</span>배포 시 다운타임 → 블루그린 방식 무중단 배포 구성</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ── PROJECT 04 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">04 · 2024.08 — 2024.10</span>
+                            <img src="project4.png" alt="WallVision 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project4.png</span>
+                        </div>
+                        <div class="project-btns">
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
+                                </svg>Live Demo</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                </svg>GitHub</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2" />
+                                    <path d="M8 21h8" />
+                                </svg>발표자료</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+                                </svg>시연영상</a>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 04</p>
+                        <h3>WallVision</h3>
+                        <p class="project-tagline">도배 시공 견적을 사진 한 장으로 — Vision + 견적 자동화</p>
+                        <p class="project-role">⚙ 기획 · 비전 모델 · 백엔드 · 배포</p>
+                        <div class="tags">
+                            <span class="tag">YOLOv8</span><span class="tag">OpenCV</span><span
+                                class="tag">FastAPI</span><span class="tag">Tailwind</span><span class="tag">AWS
+                                S3</span>
+                        </div>
+
+                        <div class="tabs" role="tablist">
+                            <button class="tab-btn active" data-tab="p4-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p4-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p4-3" role="tab">트러블슈팅</button>
+                        </div>
+                        <div class="tab-panel active" id="p4-1">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>사진에서 벽면 영역 segmentation → 실제 면적 추정</li>
+                                <li><span class="ck">✓</span>벽지 종류별 단가 DB 기반 견적 즉시 산출</li>
+                                <li><span class="ck">✓</span>사진 → 견적 → PDF 발송까지 1분 안에</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p4-2">
+                            <ul class="checklist"><!-- ✏️EDIT -->
+                                <li><span class="ck">✓</span>도배 기능사 현장 경험으로 견적 산출 로직의 실무 정합성 확보</li>
+                                <li><span class="ck">✓</span>기존 방문 견적 대비 견적 회신 시간 대폭 단축</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p4-3">
+                            <ul class="checklist"><!-- ✏️EDIT -->
+                                <li><span class="ck">✓</span>조명·왜곡으로 면적 오차 → 기준 물체 캘리브레이션 단계 추가</li>
+                                <li><span class="ck">✓</span>대용량 원본 업로드 지연 → S3 presigned URL 직접 업로드로 개선</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ═══════════ 03 LAB / IDEAS ═══════════ -->
+        <section class="section" id="lab">
+            <div class="container">
+                <div class="eyebrow reveal">03 <span class="rule"></span> LAB / IDEAS</div>
+                <h2 class="section-title reveal">어떤 생각을 하고 있는가</h2>
+                <p class="section-lead reveal">아직 실무 경험은 없지만, 사용자·도메인을 직접 겪어본 사람으로서 그릴 수 있는 서비스 제안서와 아키텍처 스케치를 모았습니다.
+                </p>
+
+                <div class="lab-grid">
+                    <div class="lab-card reveal">
+                        <div class="lab-top">
+                            <span class="lab-kind">SERVICE PROPOSAL</span>
+                            <span class="status">DRAFTING</span>
+                        </div>
+                        <h3>RehabClinic OS</h3>
+                        <p class="lab-tagline">동네 물리치료 의원의 도수치료 기록·운동처방·결제까지 한 화면에</p>
+                        <p class="lab-desc">물리치료사 면허 시절 직접 겪은 문제 — 종이 차트, 결제 따로, 운동 처방 따로 — 를 한 번에 해결하는 SaaS 제안서. 진료 흐름
+                            분석 → 정보 구조 설계 → AI 동작 분석 모듈 연동까지 단계별 아키텍처.</p>
+                        <p class="arch-label">ARCHITECTURE SKETCH</p>
+                        <ul class="arch-tree">
+                            <li>Edge: Next.js (App Router) + 모바일 PWA</li>
+                            <li>Core: NestJS REST + RBAC, 진료/결제/처방 도메인 분리</li>
+                            <li>AI Module: 별도 FastAPI 서비스, gRPC 통신</li>
+                            <li>Data: PostgreSQL + S3, 분석용 BigQuery export</li>
+                        </ul>
+                        <div class="lab-tags">
+                            <span class="tag">Next.js</span><span class="tag">NestJS</span><span
+                                class="tag">PostgreSQL</span><span class="tag">Stripe</span><span
+                                class="tag">MediaPipe</span>
+                        </div>
+                    </div>
+
+                    <div class="lab-card reveal">
+                        <div class="lab-top">
+                            <span class="lab-kind">SERVICE PROPOSAL</span>
+                            <span class="status">IDEA</span>
+                        </div>
+                        <h3>Broker Copilot</h3>
+                        <p class="lab-tagline">1인 공인중개사를 위한 매물 등록·홍보·계약서까지 AI 코파일럿</p>
+                        <p class="lab-desc">공인중개사 사무소의 실무 흐름을 따라가며, 매물 사진 → 광고 카피 → SNS 업로드 → 계약서 초안까지 자동화하는 워크플로우. 단순
+                            챗봇이 아니라 직군 특화 코파일럿으로 설계.</p>
+                        <p class="arch-label">ARCHITECTURE SKETCH</p>
+                        <ul class="arch-tree">
+                            <li>Frontend: Next.js + Server Actions</li>
+                            <li>Agent Layer: LangGraph 기반 워크플로우 오케스트레이션</li>
+                            <li>Storage: Supabase (DB + Storage + Auth)</li>
+                            <li>Media Pipeline: FFmpeg 워커로 매물 영상 자동 편집</li>
+                        </ul>
+                        <div class="lab-tags">
+                            <span class="tag">Next.js</span><span class="tag">LangGraph</span><span
+                                class="tag">Supabase</span><span class="tag">OpenAI</span><span
+                                class="tag">FFmpeg</span>
+                        </div>
+                    </div>
+
+                    <div class="lab-card reveal">
+                        <div class="lab-top">
+                            <span class="lab-kind">ARCHITECTURE SKETCH</span>
+                            <span class="status warm">PROTOTYPING</span>
+                        </div>
+                        <h3>Indie Cafe MLOps</h3>
+                        <p class="lab-tagline">작은 카페 한 곳도 자기만의 추천 모델을 가질 수 있는 초경량 MLOps</p>
+                        <p class="lab-desc">POS 데이터로 매출 예측 / 메뉴 추천 모델을 카페 단위로 학습·배포하는 초저비용 MLOps 구성도. AWS 무료 티어를 최대한 활용한
+                            비용 시뮬레이션 포함.</p>
+                        <p class="arch-label">ARCHITECTURE SKETCH</p>
+                        <ul class="arch-tree">
+                            <li>Ingest: POS CSV → S3 → Airflow DAG</li>
+                            <li>Train: MLflow Tracking + SQLite backend</li>
+                            <li>Serve: FastAPI + ONNX, EC2 t4g.nano</li>
+                            <li>Monitor: CloudWatch + 간단 Slack 알림</li>
+                        </ul>
+                        <div class="lab-tags">
+                            <span class="tag">Airflow</span><span class="tag">MLflow</span><span
+                                class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="lab-card reveal">
+                        <div class="lab-top">
+                            <span class="lab-kind">FOR FUN</span>
+                            <span class="status">IDEA</span>
+                        </div>
+                        <h3>Keypad Tower <span style="font-weight:600;color:var(--gray);">(예정)</span></h3>
+                        <p class="lab-tagline">타이핑 속도로 탑을 쌓는 아주 작은 웹 게임</p>
+                        <p class="lab-desc">쉬어가는 코너. 키보드 입력 속도와 정확도에 따라 블록이 올라가는 1인 캐주얼 게임. 심플하지만 디자인은 끝까지 다듬어볼 예정.</p>
+                        <p class="arch-label">ARCHITECTURE SKETCH</p>
+                        <ul class="arch-tree">
+                            <li>Pure Frontend, 서버 없음</li>
+                            <li>로컬 랭킹은 IndexedDB</li>
+                        </ul>
+                        <div class="lab-tags">
+                            <span class="tag">React</span><span class="tag">Canvas API</span><span
+                                class="tag">Zustand</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ 04 TECH STACK ═══════════ -->
+        <section class="section" id="stack">
+            <div class="container">
+                <div class="eyebrow reveal">04 <span class="rule"></span> TECH STACK &amp; EXPERIENCE</div>
+                <h2 class="section-title reveal">무엇을 다룰 수 있는가</h2>
+                <p class="section-lead reveal">코드만의 영역에 머무르고 싶지 않습니다. 직접 겪은 비기술 도메인의 경험이 개발자가 만드는 서비스의 결을 결정한다고 믿어요.</p>
+
+                <div class="stack-grid">
+                    <div class="stack-cards">
+                        <div class="stack-card reveal">
+                            <div class="stack-head">
+                                <h3>AI / ML</h3><span>AI</span>
+                            </div>
+                            <p class="stack-sub">모델 활용부터 서빙, 평가까지</p>
+                            <ul class="stack-list">
+                                <li>PyTorch <span class="lvl daily">Daily</span></li>
+                                <li>LangChain / LangGraph <span class="lvl daily">Daily</span></li>
+                                <li>HuggingFace <span class="lvl daily">Daily</span></li>
+                                <li>MediaPipe <span class="lvl familiar">Familiar</span></li>
+                                <li>ONNX Runtime <span class="lvl familiar">Familiar</span></li>
+                                <li>vLLM <span class="lvl learning">Learning</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="stack-card reveal">
+                            <div class="stack-head">
+                                <h3>Backend</h3><span>BACKEND</span>
+                            </div>
+                            <p class="stack-sub">도메인 모델링과 API 설계</p>
+                            <ul class="stack-list">
+                                <li>FastAPI <span class="lvl daily">Daily</span></li>
+                                <li>Spring Boot <span class="lvl daily">Daily</span></li>
+                                <li>NestJS <span class="lvl familiar">Familiar</span></li>
+                                <li>PostgreSQL <span class="lvl daily">Daily</span></li>
+                                <li>Redis <span class="lvl familiar">Familiar</span></li>
+                                <li>Kafka <span class="lvl learning">Learning</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="stack-card reveal">
+                            <div class="stack-head">
+                                <h3>Frontend</h3><span>FRONTEND</span>
+                            </div>
+                            <p class="stack-sub">UI와 인터랙션, 그리고 디테일</p>
+                            <ul class="stack-list">
+                                <li>React 19 <span class="lvl daily">Daily</span></li>
+                                <li>Next.js <span class="lvl daily">Daily</span></li>
+                                <li>TypeScript <span class="lvl daily">Daily</span></li>
+                                <li>TailwindCSS <span class="lvl daily">Daily</span></li>
+                                <li>Zustand / TanStack Query <span class="lvl familiar">Familiar</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="stack-card reveal">
+                            <div class="stack-head">
+                                <h3>Infra / DevOps</h3><span>INFRA</span>
+                            </div>
+                            <p class="stack-sub">직접 굴려본 운영 환경</p>
+                            <ul class="stack-list">
+                                <li>Docker / Compose <span class="lvl daily">Daily</span></li>
+                                <li>AWS (EC2, S3, RDS) <span class="lvl daily">Daily</span></li>
+                                <li>GitHub Actions <span class="lvl daily">Daily</span></li>
+                                <li>Nginx <span class="lvl familiar">Familiar</span></li>
+                                <li>Terraform <span class="lvl learning">Learning</span></li>
+                                <li>Kubernetes <span class="lvl learning">Learning</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="lvl-legend reveal">
+                            <span><i class="d"></i> Daily</span>
+                            <span><i class="f"></i> Familiar</span>
+                            <span><i class="l"></i> Learning</span>
+                        </div>
+                    </div>
+
+                    <!-- Beyond Code -->
+                    <aside class="beyond-card reveal">
+                        <div class="beyond-head">
+                            <h3>Beyond Code</h3>
+                            <span class="spark">✦</span>
+                        </div>
+                        <p class="beyond-sub">개발 바깥의 도메인에서 직접 면허·자격을 따며 익힌 현장 감각.</p>
+
+                        <div class="cert" style="border-top:none; padding-top:6px;">
+                            <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.8">
+                                    <path d="M3 12h4l3-7 4 14 3-7h4" />
+                                </svg></div>
+                            <div class="cert-body">
+                                <div class="cert-top">
+                                    <h4>물리치료사 면허</h4><span>2019</span>
+                                </div>
+                                <p class="cert-org">보건복지부</p>
+                                <p class="cert-desc">근골격계 도메인 지식과 동작 분석 인사이트의 출발점</p>
+                            </div>
+                        </div>
+
+                        <div class="cert">
+                            <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.8">
+                                    <path d="M3 11 12 4l9 7" />
+                                    <path d="M5 10v10h14V10" />
+                                </svg></div>
+                            <div class="cert-body">
+                                <div class="cert-top">
+                                    <h4>공인중개사 자격</h4><span>2022</span>
+                                </div>
+                                <p class="cert-org">한국산업인력공단</p>
+                                <p class="cert-desc">부동산 매물·계약·시세 데이터 도메인 이해</p>
+                            </div>
+                        </div>
+
+                        <div class="cert">
+                            <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.8">
+                                    <path d="M5 4h11v8a5.5 5.5 0 0 1-11 0V4Z" />
+                                    <path d="M16 6h2.5a2.5 2.5 0 0 1 0 5H16M7 21h7" />
+                                </svg></div>
+                            <div class="cert-body">
+                                <div class="cert-top">
+                                    <h4>국제 바리스타 자격</h4><span>2021</span>
+                                </div>
+                                <p class="cert-org">SCA</p>
+                                <p class="cert-desc">F&amp;B / 소상공인 도메인 — 운영 효율과 고객 흐름</p>
+                            </div>
+                        </div>
+
+                        <div class="cert">
+                            <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.8">
+                                    <circle cx="12" cy="13" r="8" />
+                                    <path d="M12 9v4l2.5 2.5M9 2h6" />
+                                </svg></div>
+                            <div class="cert-body">
+                                <div class="cert-top">
+                                    <h4>기타 자격 · 수료</h4><span>—</span>
+                                </div>
+                                <p class="cert-org">Various</p>
+                                <p class="cert-desc">필요할 때마다 도메인을 직접 파고드는 학습 습관</p>
+                            </div>
+                        </div>
+
+                        <div class="quote">
+                            <strong>Simple is Best.</strong> 복잡한 도메인일수록 깔끔한 결정을 내릴 수 있는 사람이 되고 싶어요. 코드도, 디자인도, 서비스의
+                            흐름도요.
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="footer" id="contact-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="reveal">
+                    <h2 class="footer-cta">함께 만들고 싶은<br>아이디어가 있다면 — 언제든.</h2>
+                    <a class="footer-mail" href="mailto:ji092.zip&#64;gmail&#46;com">ji092.zip&#64;gmail&#46;com
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2">
+                            <path d="M7 17 17 7M9 7h8v8" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer-elsewhere reveal">
+                    <p class="contact-label">ELSEWHERE</p>
+                    <div class="elsewhere-grid">
+                        <a href="https://github.com/ji092" target="_blank" rel="noopener">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.notion.so/e172c2546eac8351a5e78147332bc574?v=fd92c2546eac830c8fb088f31be44068&source=copy_link"
+                            target="_blank" rel="noopener">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <rect x="4" y="3" width="16" height="18" rx="2" />
+                                <path d="M8 8h8M8 12h8M8 16h5" />
+                            </svg>
+                            Notion
+                        </a>
+                        <a href="https://instagram.com/ji0000092" target="_blank" rel="noopener">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                            Instagram
+                        </a>
+                        <a href="ji092.zip&#64;gmail&#46;com">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <path d="m3 7 9 6 9-6" />
+                            </svg>
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 Kim Jiyoung. All rights reserved.</span>
+                <span>Built with HTML · CSS · JS &nbsp;·&nbsp; Seoul, KR</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* ───── navbar : scroll blur ───── */
+        const nav = document.getElementById('nav');
+        const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        /* ───── mobile menu ───── */
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        burger.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            burger.classList.toggle('open', open);
+            burger.setAttribute('aria-expanded', open);
+        });
+        mobileMenu.querySelectorAll('a').forEach(a =>
+            a.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                burger.classList.remove('open');
+                burger.setAttribute('aria-expanded', 'false');
+            })
+        );
+
+        /* ───── scrollspy : highlight current section ───── */
+        const spyLinks = document.querySelectorAll('[data-spy]');
+        const sections = ['about', 'projects', 'lab', 'stack'].map(id => document.getElementById(id));
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    spyLinks.forEach(l =>
+                        l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id)
+                    );
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        sections.forEach(s => s && spy.observe(s));
+
+        /* ───── project tabs ───── */
+        document.querySelectorAll('.tabs').forEach(tabs => {
+            const project = tabs.closest('.project-body');
+            tabs.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabs.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    project.querySelectorAll('.tab-panel').forEach(p =>
+                        p.classList.toggle('active', p.id === btn.dataset.tab)
+                    );
+                });
+            });
+        });
+
+        /* ───── reveal on scroll ───── */
+        const reveals = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const ro = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+                });
+            }, { threshold: .12 });
+            reveals.forEach(el => ro.observe(el));
+        } else {
+            reveals.forEach(el => el.classList.add('in'));
+        }
+    </script>
+</body>
+
+</html>
