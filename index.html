@@ -1873,11 +1873,12 @@
                         <p class="project-num">PROJECT 01</p>
                         <h3>CRACK</h3>
                         <p class="project-tagline">시민 참여 기반 도로 파손 AI 탐지·신고 플랫폼</p>
-                        <p class="project-role">⚙ 시민 제보 모듈 · 중복 신고 차단 · Report/Alert 병합 · WebSocket 실시간 알림 · 데이터 라벨링 · 모델 학습 및 선정</p>
+                        <p class="project-role">⚙ 시민 제보 모듈 · 중복 신고 차단 · Report/Alert 병합 · WebSocket 실시간 알림 · 데이터 라벨링 ·
+                            모델 학습 및 선정</p>
                         <div class="tags">
                             <span class="tag">Flask</span><span class="tag">Flask-SocketIO</span><span
-                                class="tag">YOLOv8</span><span class="tag">EfficientNet-B0</span><span
-                                class="tag">Kakao Maps API</span><span class="tag">TiDB Cloud</span>
+                                class="tag">YOLOv8</span><span class="tag">EfficientNet-B0</span><span class="tag">Kakao
+                                Maps API</span><span class="tag">TiDB Cloud</span>
                         </div>
 
                         <div class="tabs" role="tablist">
@@ -1887,26 +1888,36 @@
                         </div>
                         <div class="tab-panel active" id="p1-1">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>3단계 AI 파이프라인 설계 — YOLOv8(이상 감지) → EfficientNet-B0(4클래스 분류) → EfficientNet-B0(포트홀·강한 크랙 vs 싱크홀 분류)</li>
-                                <li><span class="ck">✓</span>멀티미디어 GPS 추출 — 이미지 EXIF + 영상 MP4 바이너리 파싱(©xyz)으로 기기별 메타데이터 신뢰성 확보</li>
-                                <li><span class="ck">✓</span>Flask-SocketIO(eventlet) 기반 실시간 WebSocket 알림 — 관리자 대시보드·모바일 PWA 양방향 이벤트 전달</li>
-                                <li><span class="ck">✓</span>하드 네거티브 마이닝 전략 수립 — 오탐 유발 데이터 레이블링 기준 설계로 Stage 2 Precision 제어</li>
+                                <li><span class="ck">✓</span>3단계 AI 파이프라인 설계 — YOLOv8(이상 감지) → EfficientNet-B0(4클래스 분류)
+                                    → EfficientNet-B0(포트홀·강한 크랙 vs 싱크홀 분류)</li>
+                                <li><span class="ck">✓</span>멀티미디어 GPS 추출 — 이미지 EXIF + 영상 MP4 바이너리 파싱(©xyz)으로 기기별 메타데이터
+                                    신뢰성 확보</li>
+                                <li><span class="ck">✓</span>Flask-SocketIO(eventlet) 기반 실시간 WebSocket 알림 — 관리자 대시보드·모바일
+                                    PWA 양방향 이벤트 전달</li>
+                                <li><span class="ck">✓</span>하드 네거티브 마이닝 전략 수립 — 오탐 유발 데이터 레이블링 기준 설계로 Stage 2 Precision
+                                    제어</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p1-2">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>시민 제보 전 과정 단일 모듈 구현 — 파일 업로드·GPS 추출·50m/24h 중복 차단·AI 분석 트리거</li>
+                                <li><span class="ck">✓</span>시민 제보 전 과정 단일 모듈 구현 — 파일 업로드·GPS 추출·50m/24h 중복 차단·AI 분석 트리거
+                                </li>
                                 <li><span class="ck">✓</span>Report·Alert 서비스 병합으로 알림 흐름 일원화</li>
-                                <li><span class="ck">✓</span>라벨링 표준 문서 v1.0 수립 — 분류 체계·QC 체크리스트·파일 구조 5인 팀 공유 기준 문서화</li>
+                                <li><span class="ck">✓</span>라벨링 표준 문서 v1.0 수립 — 분류 체계·QC 체크리스트·파일 구조 5인 팀 공유 기준 문서화
+                                </li>
                                 <li><span class="ck">✓</span>단일 YOLO 한계 분석 후 Phase 2 파이프라인 아키텍처 전환 및 최종 모델 선정</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p1-3">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>GPS 추출 실패 — hachoir 파싱이 삼성·아이폰 MP4에서 누락 → ©xyz 바이너리 직접 파싱으로 교체</li>
-                                <li><span class="ck">✓</span>Canvas 바운딩 박스 오정렬 — object-fit: contain 레터박스 미반영 → offsetX/offsetY 보정 로직 추가</li>
-                                <li><span class="ck">✓</span>소켓 이벤트 중복 실행 — 재마운트 시 핸들러 누적 → socket.off() 선행 호출 패턴으로 해결</li>
-                                <li><span class="ck">✓</span>모델 과적합 탐지 — Precision 1.000 출현을 데이터 누수 신호로 판단, 데이터 재수집 및 분리 기준 재설계</li>
+                                <li><span class="ck">✓</span>GPS 추출 실패 — hachoir 파싱이 삼성·아이폰 MP4에서 누락 → ©xyz 바이너리 직접 파싱으로
+                                    교체</li>
+                                <li><span class="ck">✓</span>Canvas 바운딩 박스 오정렬 — object-fit: contain 레터박스 미반영 →
+                                    offsetX/offsetY 보정 로직 추가</li>
+                                <li><span class="ck">✓</span>소켓 이벤트 중복 실행 — 재마운트 시 핸들러 누적 → socket.off() 선행 호출 패턴으로 해결
+                                </li>
+                                <li><span class="ck">✓</span>모델 과적합 탐지 — Precision 1.000 출현을 데이터 누수 신호로 판단, 데이터 재수집 및 분리
+                                    기준 재설계</li>
                             </ul>
                         </div>
                     </div>
@@ -1971,7 +1982,8 @@
                         </div>
                         <div class="tab-panel" id="p2-2">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>RT-DETRv2 V3 mAP@50 0.952 달성 (fire 0.983 / smoke 0.939 / carlight 0.936)</li>
+                                <li><span class="ck">✓</span>RT-DETRv2 V3 mAP@50 0.952 달성 (fire 0.983 / smoke 0.939 /
+                                    carlight 0.936)</li>
                                 <li><span class="ck">✓</span>연기 미탐율 YOLO 대비 4.8배 개선 (RT-DETRv2 39건 vs YOLO 계열 187건)</li>
                                 <li><span class="ck">✓</span>불량 라벨(0 0 0 0) 9,840건 제거 및 S3 클래스 매핑 오류 수정으로 모델 성능 회복</li>
                                 <li><span class="ck">✓</span>12,853장 / 21,802개 어노테이션 규모 데이터셋 구축</li>
@@ -1979,10 +1991,13 @@
                         </div>
                         <div class="tab-panel" id="p2-3">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>V2 학습 시 무효 bbox(0 0 0 0) 9,840건으로 성능 저하 → 라벨 전수 검증 후 제거로 해결</li>
-                                <li><span class="ck">✓</span>S3 AI Hub JSON "class" 필드가 서브카테고리 식별자임을 뒤늦게 확인 → middle classification 기준 재매핑으로 클래스 오염 해소</li>
+                                <li><span class="ck">✓</span>V2 학습 시 무효 bbox(0 0 0 0) 9,840건으로 성능 저하 → 라벨 전수 검증 후 제거로 해결
+                                </li>
+                                <li><span class="ck">✓</span>S3 AI Hub JSON "class" 필드가 서브카테고리 식별자임을 뒤늦게 확인 → middle
+                                    classification 기준 재매핑으로 클래스 오염 해소</li>
                                 <li><span class="ck">✓</span>Windows 한글 경로로 인한 OpenCV 프레임 저장 무음 실패 → 영문 경로로 전환하여 해결</li>
-                                <li><span class="ck">✓</span>야간 헤드라이트 반사광이 fire/carlight로 오탐 → 오탐 프레임 캡처 후 hard negative로 레이블링하여 V4 재학습 예정</li>
+                                <li><span class="ck">✓</span>야간 헤드라이트 반사광이 fire/carlight로 오탐 → 오탐 프레임 캡처 후 hard
+                                    negative로 레이블링하여 V4 재학습 예정</li>
                             </ul>
                         </div>
                     </div>
@@ -2039,10 +2054,12 @@
                         </div>
                         <div class="tab-panel active" id="p3-1">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>RT-DETRv2 기반 3클래스(fire/smoke/carlight) 객체 탐지 모델 설계 및 학습</li>
+                                <li><span class="ck">✓</span>RT-DETRv2 기반 3클래스(fire/smoke/carlight) 객체 탐지 모델 설계 및 학습
+                                </li>
                                 <li><span class="ck">✓</span>2단계 파이프라인 설계 (비전 모델 → VLM 검증)으로 오탐 최소화</li>
                                 <li><span class="ck">✓</span>5FPS 다운샘플링 기반 다채널 CCTV 동시 처리 운영 전략</li>
-                                <li><span class="ck">✓</span>VMware ESXi 위 4-VM 분산 인프라 구성 (프론트/백엔드/AI·VLM/Python 워커)</li>
+                                <li><span class="ck">✓</span>VMware ESXi 위 4-VM 분산 인프라 구성 (프론트/백엔드/AI·VLM/Python 워커)
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p3-2">
@@ -2054,8 +2071,10 @@
                         </div>
                         <div class="tab-panel" id="p3-3">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>야외 야간 차량 전조등 오탐 문제 → carlight 네거티브 클래스 설계 및 추가 데이터 수집(약 1,300장, 2,500+ 라벨) 진행</li>
-                                <li><span class="ck">✓</span>TiDB Cloud 스테일 커넥션 문제 → SQLAlchemy pool_pre_ping=True, pool_recycle=1800 설정으로 해결</li>
+                                <li><span class="ck">✓</span>야외 야간 차량 전조등 오탐 문제 → carlight 네거티브 클래스 설계 및 추가 데이터 수집(약
+                                    1,300장, 2,500+ 라벨) 진행</li>
+                                <li><span class="ck">✓</span>TiDB Cloud 스테일 커넥션 문제 → SQLAlchemy pool_pre_ping=True,
+                                    pool_recycle=1800 설정으로 해결</li>
                                 <li><span class="ck">✓</span>TiDB Cloud SSL CA 인증서 경로 문제 → certifi 라이브러리로 해결</li>
                             </ul>
                         </div>
@@ -2101,9 +2120,9 @@
                         <p class="project-tagline">방명록 작성을 입장권 삼아 브라우저에서 즐기는 인생네컷 스타일 포토부스</p>
                         <p class="project-role">⚙ 기획 · 프론트엔드 · 백엔드 · 배포</p>
                         <div class="tags">
-                            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span
-                                class="tag">Canvas API</span><span class="tag">Supabase</span><span
-                                class="tag">TiDB</span><span class="tag">Pillow</span>
+                            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Canvas
+                                API</span><span class="tag">Supabase</span><span class="tag">TiDB</span><span
+                                class="tag">Pillow</span>
                         </div>
 
                         <div class="tabs" role="tablist">
@@ -2123,13 +2142,16 @@
                             <ul class="checklist">
                                 <li><span class="ck">✓</span>로그인·결제 없이 방명록만으로 입장 가능한 UX 설계</li>
                                 <li><span class="ck">✓</span>1×4, 2×2 총 14종 프레임 시스템 설계 및 슬롯 좌표 데이터 추출</li>
-                                <li><span class="ck">✓</span>Windows 98 / Y2K 레트로 테마 UI 구현 (Start Menu, Notepad 방명록 등)</li>
+                                <li><span class="ck">✓</span>Windows 98 / Y2K 레트로 테마 UI 구현 (Start Menu, Notepad 방명록 등)
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p4-3">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>프레임 슬롯 자동 감지(색상/투명도 분석) 신뢰도 부족 → 빨간 박스 수동 드로잉 후 픽셀 좌표 추출 방식으로 전환</li>
-                                <li><span class="ck">✓</span>TiDB 자격증명이 데이터베이스 단위가 아닌 유저 단위 귀속임을 확인 → TIDB_DATABASE 환경변수만 교체하는 구조로 정리</li>
+                                <li><span class="ck">✓</span>프레임 슬롯 자동 감지(색상/투명도 분석) 신뢰도 부족 → 빨간 박스 수동 드로잉 후 픽셀 좌표 추출
+                                    방식으로 전환</li>
+                                <li><span class="ck">✓</span>TiDB 자격증명이 데이터베이스 단위가 아닌 유저 단위 귀속임을 확인 → TIDB_DATABASE
+                                    환경변수만 교체하는 구조로 정리</li>
                             </ul>
                         </div>
                     </div>
@@ -2393,9 +2415,12 @@
                         <div class="tab-panel" id="p8-3">
                             <ul class="checklist">
                                 <li><span class="ck">✓</span>mediapipe 신버전 레거시 API 제거 → 0.10.14 버전 고정으로 해결</li>
-                                <li><span class="ck">✓</span>eventlet + mediapipe 충돌 → monkey_patch(thread=False) 적용</li>
-                                <li><span class="ck">✓</span>gesture_recognizer.task 모델 파일 부재 시 크래시 → graceful degradation 구현 (11개 중 7개 정상 동작)</li>
-                                <li><span class="ck">✓</span>zoom_threshold 캘리브레이션 스키마 불일치 → 제스처 재설계 후 vestigial 필드로 식별 및 정리</li>
+                                <li><span class="ck">✓</span>eventlet + mediapipe 충돌 → monkey_patch(thread=False) 적용
+                                </li>
+                                <li><span class="ck">✓</span>gesture_recognizer.task 모델 파일 부재 시 크래시 → graceful
+                                    degradation 구현 (11개 중 7개 정상 동작)</li>
+                                <li><span class="ck">✓</span>zoom_threshold 캘리브레이션 스키마 불일치 → 제스처 재설계 후 vestigial 필드로 식별
+                                    및 정리</li>
                             </ul>
                         </div>
                     </div>
@@ -2628,7 +2653,8 @@
             <div class="container">
                 <div class="eyebrow reveal">04 <span class="rule"></span> TECH STACK &amp; EXPERIENCE</div>
                 <h2 class="section-title reveal">무엇을 다룰 수 있는가</h2>
-                <p class="section-lead reveal">코드만의 영역에 머무르고 싶지 않습니다. 직접 겪은 비기술 도메인의 경험이 개발자가 만드는 서비스의 결을 결정한다고 믿어요.</p>
+                <p class="section-lead reveal">코드만의 영역에 머무르고 싶지 않습니다. 직접 겪은 비기술 도메인의 경험이 개발자가 만드는 서비스의 깊이를 만든다고 믿습니다.
+                </p>
 
                 <div class="stack-grid">
                     <div class="stack-cards">
@@ -2716,7 +2742,7 @@
                                     <h4>물리치료사 면허</h4><span>2019</span>
                                 </div>
                                 <p class="cert-org">보건복지부</p>
-                                <p class="cert-desc">근골격계 도메인 지식과 동작 분석 인사이트의 출발점</p>
+                                <p class="cert-desc">병의원 임상 현장을 직접 경험한 의료서비스 전반의 이해</p>
                             </div>
                         </div>
 
