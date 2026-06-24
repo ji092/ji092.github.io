@@ -13,8 +13,7 @@
   ✏️ 수정 
   1. 프로젝트 이미지  : 같은 폴더에 project1.png ~ project4.png 업로드
   2. 시연영상/발표자료: 각 버튼의 href="#"  유튜브, PDF 파일경로 교체
-  3. ✏️EDIT 주석     : 핵심 성과 / 트러블슈팅 탭 실제 내용으로 교체
-══════════════════════════════════════════════════════════════
+ ══════════════════════════════════════════════════════════════
 -->
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -1839,9 +1838,9 @@
                 <article class="project reveal">
                     <div class="project-media">
                         <div class="project-thumb">
-                            <span class="date-badge">01 · 2026.03 — 2026.04</span>
+                            <span class="date-badge">01 · 2026.03.16 — 2026.04.07</span>
                             <!-- ✏️ project1.png 업로드 시 자동 표시 -->
-                            <img src="project1.png" alt="RehabMate 미리보기"
+                            <img src="project1.png" alt="CRACK 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
                             <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project1.png</span>
                         </div>
@@ -1872,12 +1871,13 @@
 
                     <div class="project-body">
                         <p class="project-num">PROJECT 01</p>
-                        <h3>RehabMate</h3>
-                        <p class="project-tagline">물리치료 동작 교정 AI 코칭 서비스</p>
-                        <p class="project-role">⚙ 기획 · AI 모델 · 백엔드 · 배포 (1인 풀스택)</p>
+                        <h3>CRACK</h3>
+                        <p class="project-tagline">시민 참여 기반 도로 파손 AI 탐지·신고 플랫폼</p>
+                        <p class="project-role">⚙ 시민 제보 모듈 · 중복 신고 차단 · Report/Alert 병합 · WebSocket 실시간 알림 · 데이터 라벨링 · 모델 학습 및 선정</p>
                         <div class="tags">
-                            <span class="tag">MediaPipe</span><span class="tag">FastAPI</span><span
-                                class="tag">React</span><span class="tag">Docker</span><span class="tag">AWS EC2</span>
+                            <span class="tag">Flask</span><span class="tag">Flask-SocketIO</span><span
+                                class="tag">YOLOv8</span><span class="tag">EfficientNet-B0</span><span
+                                class="tag">Kakao Maps API</span><span class="tag">TiDB Cloud</span>
                         </div>
 
                         <div class="tabs" role="tablist">
@@ -1887,22 +1887,26 @@
                         </div>
                         <div class="tab-panel active" id="p1-1">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>MediaPipe Pose 기반 실시간 자세 추정 + 각도 계산 룰엔진</li>
-                                <li><span class="ck">✓</span>운동 종목별 보상동작 탐지 알고리즘 직접 설계</li>
-                                <li><span class="ck">✓</span>FastAPI + WebSocket으로 30fps 스트리밍 처리</li>
+                                <li><span class="ck">✓</span>3단계 AI 파이프라인 설계 — YOLOv8(이상 감지) → EfficientNet-B0(4클래스 분류) → EfficientNet-B0(포트홀·강한 크랙 vs 싱크홀 분류)</li>
+                                <li><span class="ck">✓</span>멀티미디어 GPS 추출 — 이미지 EXIF + 영상 MP4 바이너리 파싱(©xyz)으로 기기별 메타데이터 신뢰성 확보</li>
+                                <li><span class="ck">✓</span>Flask-SocketIO(eventlet) 기반 실시간 WebSocket 알림 — 관리자 대시보드·모바일 PWA 양방향 이벤트 전달</li>
+                                <li><span class="ck">✓</span>하드 네거티브 마이닝 전략 수립 — 오탐 유발 데이터 레이블링 기준 설계로 Stage 2 Precision 제어</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p1-2">
-                            <ul class="checklist"><!-- ✏️EDIT 실제 성과로 교체 -->
-                                <li><span class="ck">✓</span>물리치료사 면허 경험을 살려 임상 기준에 맞는 가동범위 평가 설계</li>
-                                <li><span class="ck">✓</span>실사용 테스트에서 보상동작 탐지 정확도 검증 완료</li>
-                                <li><span class="ck">✓</span>기획 → 배포까지 3개월, 1인 풀스택 완주</li>
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>시민 제보 전 과정 단일 모듈 구현 — 파일 업로드·GPS 추출·50m/24h 중복 차단·AI 분석 트리거</li>
+                                <li><span class="ck">✓</span>Report·Alert 서비스 병합으로 알림 흐름 일원화</li>
+                                <li><span class="ck">✓</span>라벨링 표준 문서 v1.0 수립 — 분류 체계·QC 체크리스트·파일 구조 5인 팀 공유 기준 문서화</li>
+                                <li><span class="ck">✓</span>단일 YOLO 한계 분석 후 Phase 2 파이프라인 아키텍처 전환 및 최종 모델 선정</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p1-3">
-                            <ul class="checklist"><!-- ✏️EDIT 실제 트러블슈팅으로 교체 -->
-                                <li><span class="ck">✓</span>WebSocket 프레임 드랍 → 프레임 샘플링 + 비동기 큐로 지연 개선</li>
-                                <li><span class="ck">✓</span>EC2 t 시리즈 CPU 추론 한계 → ONNX 변환으로 추론 속도 확보</li>
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>GPS 추출 실패 — hachoir 파싱이 삼성·아이폰 MP4에서 누락 → ©xyz 바이너리 직접 파싱으로 교체</li>
+                                <li><span class="ck">✓</span>Canvas 바운딩 박스 오정렬 — object-fit: contain 레터박스 미반영 → offsetX/offsetY 보정 로직 추가</li>
+                                <li><span class="ck">✓</span>소켓 이벤트 중복 실행 — 재마운트 시 핸들러 누적 → socket.off() 선행 호출 패턴으로 해결</li>
+                                <li><span class="ck">✓</span>모델 과적합 탐지 — Precision 1.000 출현을 데이터 누수 신호로 판단, 데이터 재수집 및 분리 기준 재설계</li>
                             </ul>
                         </div>
                     </div>
@@ -1912,8 +1916,8 @@
                 <article class="project reveal">
                     <div class="project-media">
                         <div class="project-thumb">
-                            <span class="date-badge">02 · 2026.05 — 2026.06</span>
-                            <img src="project2.png" alt="EstateRAG 미리보기"
+                            <span class="date-badge">02 · 2026.04 — 진행중</span>
+                            <img src="project2.png" alt="Argos 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
                             <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project2.png</span>
                         </div>
@@ -1943,13 +1947,13 @@
 
                     <div class="project-body">
                         <p class="project-num">PROJECT 02</p>
-                        <h3>EstateRAG</h3>
-                        <p class="project-tagline">공인중개사 실무용 RAG 챗봇 — 등기부·시세·계약서 한 번에</p>
-                        <p class="project-role">⚙ 기획 · RAG 파이프라인 · 프론트 · 배포</p>
+                        <h3>Argos</h3>
+                        <p class="project-tagline">터널 CCTV 이상 탐지 시스템 — 화재·연기·차량 이상 실시간 탐지 및 알림</p>
+                        <p class="project-role">⚙ AI 모델 학습 전담 · 백엔드 · 배포</p>
                         <div class="tags">
-                            <span class="tag">LangChain</span><span class="tag">PGVector</span><span
-                                class="tag">Next.js</span><span class="tag">Supabase</span><span
-                                class="tag">Vercel</span>
+                            <span class="tag">RT-DETRv2</span><span class="tag">YOLOv5</span><span
+                                class="tag">FastAPI</span><span class="tag">Flask-SocketIO</span><span
+                                class="tag">Next.js</span><span class="tag">Docker Compose</span>
                         </div>
 
                         <div class="tabs" role="tablist">
@@ -1959,21 +1963,26 @@
                         </div>
                         <div class="tab-panel active" id="p2-1">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>등기부등본·시세·표준계약서 문서 자체 임베딩 파이프라인</li>
-                                <li><span class="ck">✓</span>하이브리드 검색(BM25 + Dense) + 재랭킹 단계 적용</li>
-                                <li><span class="ck">✓</span>출처 인용(citation)을 답변마다 강제로 노출</li>
+                                <li><span class="ck">✓</span>RT-DETRv2 (HGNetv2-L 백본) 객체 탐지 모델 학습 및 최적화</li>
+                                <li><span class="ck">✓</span>Albumentations 기반 클래스별 차등 증강 파이프라인 구성</li>
+                                <li><span class="ck">✓</span>COCO JSON 어노테이션 커스텀 재구성 및 라벨 정제</li>
+                                <li><span class="ck">✓</span>APScheduler + Flask-SocketIO 기반 폴링 아키텍처 설계</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p2-2">
-                            <ul class="checklist"><!-- ✏️EDIT -->
-                                <li><span class="ck">✓</span>공인중개사 자격 도메인 지식으로 질의 의도 분류 체계 설계</li>
-                                <li><span class="ck">✓</span>환각(hallucination) 답변 비율을 출처 강제 인용으로 대폭 감소</li>
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>RT-DETRv2 V3 mAP@50 0.952 달성 (fire 0.983 / smoke 0.939 / carlight 0.936)</li>
+                                <li><span class="ck">✓</span>연기 미탐율 YOLO 대비 4.8배 개선 (RT-DETRv2 39건 vs YOLO 계열 187건)</li>
+                                <li><span class="ck">✓</span>불량 라벨(0 0 0 0) 9,840건 제거 및 S3 클래스 매핑 오류 수정으로 모델 성능 회복</li>
+                                <li><span class="ck">✓</span>12,853장 / 21,802개 어노테이션 규모 데이터셋 구축</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p2-3">
-                            <ul class="checklist"><!-- ✏️EDIT -->
-                                <li><span class="ck">✓</span>표 형태 시세 데이터 청킹 깨짐 → 표 전용 파서 + 메타데이터 청킹으로 해결</li>
-                                <li><span class="ck">✓</span>키워드 질의 검색 누락 → BM25 하이브리드 도입으로 리콜 개선</li>
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>V2 학습 시 무효 bbox(0 0 0 0) 9,840건으로 성능 저하 → 라벨 전수 검증 후 제거로 해결</li>
+                                <li><span class="ck">✓</span>S3 AI Hub JSON "class" 필드가 서브카테고리 식별자임을 뒤늦게 확인 → middle classification 기준 재매핑으로 클래스 오염 해소</li>
+                                <li><span class="ck">✓</span>Windows 한글 경로로 인한 OpenCV 프레임 저장 무음 실패 → 영문 경로로 전환하여 해결</li>
+                                <li><span class="ck">✓</span>야간 헤드라이트 반사광이 fire/carlight로 오탐 → 오탐 프레임 캡처 후 hard negative로 레이블링하여 V4 재학습 예정</li>
                             </ul>
                         </div>
                     </div>
@@ -1983,8 +1992,8 @@
                 <article class="project reveal">
                     <div class="project-media">
                         <div class="project-thumb">
-                            <span class="date-badge">03 · 2026.06 — 2026.07</span>
-                            <img src="project3.png" alt="BaristaBoard 미리보기"
+                            <span class="date-badge">03 · 2026.06.08 — 2026.07.07</span>
+                            <img src="project3.png" alt="Flare 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
                             <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project3.png</span>
                         </div>
@@ -2014,13 +2023,13 @@
 
                     <div class="project-body">
                         <p class="project-num">PROJECT 03</p>
-                        <h3>BaristaBoard</h3>
-                        <p class="project-tagline">1인 카페 사장님을 위한 메뉴·재고·매출 통합 대시보드</p>
-                        <p class="project-role">⚙ 기획 · 백엔드 · 프론트 · 인프라</p>
+                        <h3>Flare</h3>
+                        <p class="project-tagline">고속도로 터널 CCTV 기반 실시간 화재·연기 감지 AI 시스템</p>
+                        <p class="project-role">⚙ 기획 · AI 모델 · 백엔드 · 인프라</p>
                         <div class="tags">
-                            <span class="tag">Spring Boot</span><span class="tag">MySQL</span><span
-                                class="tag">React</span><span class="tag">Nginx</span><span class="tag">GitHub
-                                Actions</span>
+                            <span class="tag">RT-DETRv2</span><span class="tag">YOLOv8</span><span
+                                class="tag">YOLOv11</span><span class="tag">FastAPI</span><span
+                                class="tag">Next.js</span><span class="tag">TiDB Cloud</span>
                         </div>
 
                         <div class="tabs" role="tablist">
@@ -2030,21 +2039,24 @@
                         </div>
                         <div class="tab-panel active" id="p3-1">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>POS 데이터 CSV 자동 파싱 + 일·주·월 단위 매출 분석</li>
-                                <li><span class="ck">✓</span>원두 재고 자동 차감 / 발주 알림 룰</li>
-                                <li><span class="ck">✓</span>GitHub Actions로 빌드 → Docker → EC2 무중단 배포</li>
+                                <li><span class="ck">✓</span>RT-DETRv2 기반 3클래스(fire/smoke/carlight) 객체 탐지 모델 설계 및 학습</li>
+                                <li><span class="ck">✓</span>2단계 파이프라인 설계 (비전 모델 → VLM 검증)으로 오탐 최소화</li>
+                                <li><span class="ck">✓</span>5FPS 다운샘플링 기반 다채널 CCTV 동시 처리 운영 전략</li>
+                                <li><span class="ck">✓</span>VMware ESXi 위 4-VM 분산 인프라 구성 (프론트/백엔드/AI·VLM/Python 워커)</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p3-2">
-                            <ul class="checklist"><!-- ✏️EDIT -->
-                                <li><span class="ck">✓</span>바리스타 실무 경험 기반 재고·발주 흐름을 그대로 시스템화</li>
-                                <li><span class="ck">✓</span>수기 정산 대비 일일 마감 시간 단축 검증</li>
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>12,853장 이미지, 21,802 어노테이션 데이터셋 구축</li>
+                                <li><span class="ck">✓</span>RT-DETRv2-l / YOLOv8-l / YOLOv11-l 동일 조건 비교 실험 수행</li>
+                                <li><span class="ck">✓</span>carlight 네거티브 클래스 도입으로 야간 전조등 오탐 억제 설계</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p3-3">
-                            <ul class="checklist"><!-- ✏️EDIT -->
-                                <li><span class="ck">✓</span>POS CSV 포맷 편차 → 파서 어댑터 패턴으로 기기별 대응</li>
-                                <li><span class="ck">✓</span>배포 시 다운타임 → 블루그린 방식 무중단 배포 구성</li>
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>야외 야간 차량 전조등 오탐 문제 → carlight 네거티브 클래스 설계 및 추가 데이터 수집(약 1,300장, 2,500+ 라벨) 진행</li>
+                                <li><span class="ck">✓</span>TiDB Cloud 스테일 커넥션 문제 → SQLAlchemy pool_pre_ping=True, pool_recycle=1800 설정으로 해결</li>
+                                <li><span class="ck">✓</span>TiDB Cloud SSL CA 인증서 경로 문제 → certifi 라이브러리로 해결</li>
                             </ul>
                         </div>
                     </div>
@@ -2054,8 +2066,8 @@
                 <article class="project reveal">
                     <div class="project-media">
                         <div class="project-thumb">
-                            <span class="date-badge">04 · 2026.06 — 2026.08</span>
-                            <img src="project4.png" alt="WallVision 미리보기"
+                            <span class="date-badge">04 · 2026.06.10 — 2026.06.13</span>
+                            <img src="project4.png" alt="자리네컷 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
                             <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project4.png</span>
                         </div>
@@ -2085,13 +2097,13 @@
 
                     <div class="project-body">
                         <p class="project-num">PROJECT 04</p>
-                        <h3>WallVision</h3>
-                        <p class="project-tagline">도배 시공 견적을 사진 한 장으로 — Vision + 견적 자동화</p>
-                        <p class="project-role">⚙ 기획 · 비전 모델 · 백엔드 · 배포</p>
+                        <h3>자리네컷 (Zarinaecut)</h3>
+                        <p class="project-tagline">방명록 작성을 입장권 삼아 브라우저에서 즐기는 인생네컷 스타일 포토부스</p>
+                        <p class="project-role">⚙ 기획 · 프론트엔드 · 백엔드 · 배포</p>
                         <div class="tags">
-                            <span class="tag">YOLOv8</span><span class="tag">OpenCV</span><span
-                                class="tag">FastAPI</span><span class="tag">Tailwind</span><span class="tag">AWS
-                                S3</span>
+                            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span
+                                class="tag">Canvas API</span><span class="tag">Supabase</span><span
+                                class="tag">TiDB</span><span class="tag">Pillow</span>
                         </div>
 
                         <div class="tabs" role="tablist">
@@ -2101,21 +2113,289 @@
                         </div>
                         <div class="tab-panel active" id="p4-1">
                             <ul class="checklist">
-                                <li><span class="ck">✓</span>사진에서 벽면 영역 segmentation → 실제 면적 추정</li>
-                                <li><span class="ck">✓</span>벽지 종류별 단가 DB 기반 견적 즉시 산출</li>
-                                <li><span class="ck">✓</span>사진 → 견적 → PDF 발송까지 1분 안에</li>
+                                <li><span class="ck">✓</span>Canvas API 기반 클라이언트 사이드 이미지 합성 (서버 업로드 없음)</li>
+                                <li><span class="ck">✓</span>Web Audio API를 활용한 셔터음 및 BGM 재생</li>
+                                <li><span class="ck">✓</span>브라우저 Camera API로 데스크탑·모바일 촬영 지원</li>
+                                <li><span class="ck">✓</span>Python + Pillow/NumPy 기반 프레임 슬롯 투명화 파이프라인</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p4-2">
-                            <ul class="checklist"><!-- ✏️EDIT -->
-                                <li><span class="ck">✓</span>도배사 현장 경험으로 견적 산출 로직의 실무 정합성 확보</li>
-                                <li><span class="ck">✓</span>기존 방문 견적 대비 견적 회신 시간 대폭 단축</li>
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>로그인·결제 없이 방명록만으로 입장 가능한 UX 설계</li>
+                                <li><span class="ck">✓</span>1×4, 2×2 총 14종 프레임 시스템 설계 및 슬롯 좌표 데이터 추출</li>
+                                <li><span class="ck">✓</span>Windows 98 / Y2K 레트로 테마 UI 구현 (Start Menu, Notepad 방명록 등)</li>
                             </ul>
                         </div>
                         <div class="tab-panel" id="p4-3">
-                            <ul class="checklist"><!-- ✏️EDIT -->
-                                <li><span class="ck">✓</span>조명·왜곡으로 면적 오차 → 기준 물체 캘리브레이션 단계 추가</li>
-                                <li><span class="ck">✓</span>대용량 원본 업로드 지연 → S3 presigned URL 직접 업로드로 개선</li>
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>프레임 슬롯 자동 감지(색상/투명도 분석) 신뢰도 부족 → 빨간 박스 수동 드로잉 후 픽셀 좌표 추출 방식으로 전환</li>
+                                <li><span class="ck">✓</span>TiDB 자격증명이 데이터베이스 단위가 아닌 유저 단위 귀속임을 확인 → TIDB_DATABASE 환경변수만 교체하는 구조로 정리</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ── PROJECT 05 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">05 · TBD</span>
+                            <img src="project5.png" alt="프로젝트 05 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project5.png</span>
+                        </div>
+                        <div class="project-btns">
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
+                                </svg>Live Demo</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                </svg>GitHub</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2" />
+                                    <path d="M8 21h8" />
+                                </svg>발표자료</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+                                </svg>시연영상</a>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 05</p>
+                        <h3><!-- ✏️EDIT 프로젝트명 --></h3>
+                        <p class="project-tagline"><!-- ✏️EDIT 한 줄 설명 --></p>
+                        <p class="project-role">⚙ <!-- ✏️EDIT 역할 --></p>
+                        <div class="tags">
+                            <!-- ✏️EDIT 기술 스택 태그 -->
+                        </div>
+
+                        <div class="tabs" role="tablist">
+                            <button class="tab-btn active" data-tab="p5-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p5-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p5-3" role="tab">트러블슈팅</button>
+                        </div>
+                        <div class="tab-panel active" id="p5-1">
+                            <ul class="checklist"><!-- ✏️EDIT --></ul>
+                        </div>
+                        <div class="tab-panel" id="p5-2">
+                            <ul class="checklist"><!-- ✏️EDIT --></ul>
+                        </div>
+                        <div class="tab-panel" id="p5-3">
+                            <ul class="checklist"><!-- ✏️EDIT --></ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ── PROJECT 06 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">06 · 2026.06.17 — 진행중</span>
+                            <img src="project6.png" alt="Nudge 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project6.png</span>
+                        </div>
+                        <div class="project-btns">
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
+                                </svg>Live Demo</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                </svg>GitHub</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2" />
+                                    <path d="M8 21h8" />
+                                </svg>발표자료</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+                                </svg>시연영상</a>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 06</p>
+                        <h3>Nudge</h3>
+                        <p class="project-tagline">멀티 프로젝트 환경에서 창(Window) 혼재 문제를 해결하는 로컬 AI 비서 데스크탑 앱</p>
+                        <p class="project-role">⚙ 기획 · 프론트엔드 · 백엔드 · AI 통합</p>
+                        <div class="tags">
+                            <span class="tag">React</span><span class="tag">TypeScript</span><span
+                                class="tag">Tauri(Rust)</span><span class="tag">Python</span><span
+                                class="tag">pywin32</span><span class="tag">Ollama / Qwen3 8B</span>
+                        </div>
+
+                        <div class="tabs" role="tablist">
+                            <button class="tab-btn active" data-tab="p6-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p6-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p6-3" role="tab">트러블슈팅</button>
+                        </div>
+                        <div class="tab-panel active" id="p6-1">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>Tauri(Rust) 기반 경량 데스크탑 앱 구축</li>
+                                <li><span class="ck">✓</span>pywin32를 활용한 Windows 창 수집 및 제어</li>
+                                <li><span class="ck">✓</span>Ollama + Qwen3 8B 로컬 LLM 연동 (외부 데이터 전송 없음)</li>
+                                <li><span class="ck">✓</span>Rule Engine → LLM 분리 설계 (판단은 룰 엔진, 자연어 생성만 LLM)</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p6-2">
+                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
+                        </div>
+                        <div class="tab-panel" id="p6-3">
+                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ── PROJECT 07 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">07 · 2026.07 — 진행중</span>
+                            <img src="project7.png" alt="MissionRing 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project7.png</span>
+                        </div>
+                        <div class="project-btns">
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
+                                </svg>Live Demo</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                </svg>GitHub</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2" />
+                                    <path d="M8 21h8" />
+                                </svg>발표자료</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+                                </svg>시연영상</a>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 07</p>
+                        <h3>MissionRing</h3>
+                        <p class="project-tagline">AI 사진 인증 기반 미션 알람 앱 — 기상 루틴 완료를 VLM으로 검증하여 알람 해제</p>
+                        <p class="project-role">⚙ 기획 · AI 모델 · 백엔드</p>
+                        <div class="tags">
+                            <span class="tag">React Native</span><span class="tag">Expo</span><span
+                                class="tag">FastAPI</span><span class="tag">Claude Vision API</span><span
+                                class="tag">Whisper STT</span><span class="tag">Supabase</span>
+                        </div>
+
+                        <div class="tabs" role="tablist">
+                            <button class="tab-btn active" data-tab="p7-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p7-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p7-3" role="tab">트러블슈팅</button>
+                        </div>
+                        <div class="tab-panel active" id="p7-1">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>Claude Vision API를 활용한 VLM 기반 사진 미션 검증 파이프라인</li>
+                                <li><span class="ck">✓</span>EXIF 메타데이터 분석을 통한 사진 재사용 방지 (시간 위변조 탐지)</li>
+                                <li><span class="ck">✓</span>Whisper STT 기반 통화 녹음 전사 및 요약</li>
+                                <li><span class="ck">✓</span>Supabase RBAC를 활용한 보호자/사용자 계정 분리 구조</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p7-2">
+                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
+                        </div>
+                        <div class="tab-panel" id="p7-3">
+                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ── PROJECT 08 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">08 · 2026.06.21 — 진행중</span>
+                            <img src="project8.png" alt="InSight Tracker 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project8.png</span>
+                        </div>
+                        <div class="project-btns">
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
+                                </svg>Live Demo</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                </svg>GitHub</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2" />
+                                    <path d="M8 21h8" />
+                                </svg>발표자료</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+                                </svg>시연영상</a>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 08</p>
+                        <h3>InSight Tracker</h3>
+                        <p class="project-tagline">카메라 기반 손 제스처 인식과 아이트래킹으로 PC에서 스마트폰을 원격 제어하는 AI 포트폴리오 프로젝트</p>
+                        <p class="project-role">⚙ PM · AI 모델 · 기획</p>
+                        <div class="tags">
+                            <span class="tag">MediaPipe</span><span class="tag">Python</span><span
+                                class="tag">OpenCV</span><span class="tag">ADB</span>
+                        </div>
+
+                        <div class="tabs" role="tablist">
+                            <button class="tab-btn active" data-tab="p8-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p8-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p8-3" role="tab">트러블슈팅</button>
+                        </div>
+                        <div class="tab-panel active" id="p8-1">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>MediaPipe Hands 21-landmark 좌표 추출 기반 제스처 인식</li>
+                                <li><span class="ck">✓</span>룰 기반 커스텀 제스처 분류 (모델 재학습 없음)</li>
+                                <li><span class="ck">✓</span>ADB를 통한 원격 기기 제어 및 상태 감지</li>
+                                <li><span class="ck">✓</span>퍼유저 캘리브레이션 (5샘플 평균 → calibration.json 저장)</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p8-2">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>Level 1 완료: 화면 미러링 + ADB 마우스 원격제어</li>
+                                <li><span class="ck">✓</span>11개 제스처 매핑 확정 (기본 모드 9개 + 전화 모드 2개)</li>
+                                <li><span class="ck">✓</span>MediaPipe 0.10.14 버전 고정으로 레거시 API 호환성 확보</li>
+                                <li><span class="ck">✓</span>에이전트 인프라(.agents/) 단일 루트로 통합 완료</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p8-3">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>mediapipe 신버전 레거시 API 제거 → 0.10.14 버전 고정으로 해결</li>
+                                <li><span class="ck">✓</span>eventlet + mediapipe 충돌 → monkey_patch(thread=False) 적용</li>
+                                <li><span class="ck">✓</span>gesture_recognizer.task 모델 파일 부재 시 크래시 → graceful degradation 구현 (11개 중 7개 정상 동작)</li>
+                                <li><span class="ck">✓</span>zoom_threshold 캘리브레이션 스키마 불일치 → 제스처 재설계 후 vestigial 필드로 식별 및 정리</li>
                             </ul>
                         </div>
                     </div>
