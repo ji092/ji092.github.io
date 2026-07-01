@@ -2161,10 +2161,10 @@
                 <article class="project reveal">
                     <div class="project-media">
                         <div class="project-thumb">
-                            <span class="date-badge">05 · TBD</span>
-                            <img src="project5.png" alt="프로젝트 05 미리보기"
+                            <span class="date-badge">03 · 2026.06 — 기획/개발중</span>
+                            <img src="project3.png" alt="도깨비 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project5.png</span>
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project3.png</span>
                         </div>
                         <div class="project-btns">
                             <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
@@ -2191,27 +2191,51 @@
                     </div>
 
                     <div class="project-body">
-                        <p class="project-num">PROJECT 05</p>
-                        <h3><!-- ✏️EDIT 프로젝트명 --></h3>
-                        <p class="project-tagline"><!-- ✏️EDIT 한 줄 설명 --></p>
-                        <p class="project-role">⚙ <!-- ✏️EDIT 역할 --></p>
+                        <p class="project-num">PROJECT 03</p>
+                        <h3>도깨비 (Dokkaebi)</h3>
+                        <p class="project-tagline">한국 설화 모티프의 BLE 태그 기반 스마트 분실물 추적 앱 — "잃어버린 물건은 도깨비가 숨긴 것"</p>
+                        <p class="project-role">⚙ 1인 기획·개발 전담 (펌웨어 · 모바일 · 백엔드)</p>
                         <div class="tags">
-                            <!-- ✏️EDIT 기술 스택 태그 -->
+                            <span class="tag">ESP32 DevKitC</span><span class="tag">BLE</span><span
+                                class="tag">Android</span><span class="tag">FastAPI (예정)</span><span
+                                class="tag">PlatformIO (검토중)</span>
                         </div>
 
                         <div class="tabs" role="tablist">
-                            <button class="tab-btn active" data-tab="p5-1" role="tab">강조 기술</button>
-                            <button class="tab-btn" data-tab="p5-2" role="tab">핵심 성과</button>
-                            <button class="tab-btn" data-tab="p5-3" role="tab">트러블슈팅</button>
+                            <button class="tab-btn active" data-tab="p3-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p3-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p3-3" role="tab">트러블슈팅</button>
                         </div>
-                        <div class="tab-panel active" id="p5-1">
-                            <ul class="checklist"><!-- ✏️EDIT --></ul>
+                        <div class="tab-panel active" id="p3-1">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>ESP32 기반 BLE 태그 펌웨어 설계 — GPS 없이 BLE 신호만으로 위치 추정</li>
+                                <li><span class="ck">✓</span>분실물 카테고리별 캐릭터(차키=바퀴도깨비, 지갑=금전도깨비 등)를 전 기능에 매핑한 스토리텔링 UX 설계
+                                </li>
+                                <li><span class="ck">✓</span>InSight Tracker 프로젝트의 에이전트 기반 워크플로우 구조를 재사용한 멀티 에이전트 개발 체계
+                                    구축
+                                    (PM·보안·기획·디자인·개발·QA·배포 역할 분리)</li>
+                                <li><span class="ck">✓</span>YAGNI 원칙 기반 MVP 스코프 관리 — BLE-only, 솔로 개발에 불필요한 테스트 자동화 등
+                                    의도적 제외</li>
+                            </ul>
                         </div>
-                        <div class="tab-panel" id="p5-2">
-                            <ul class="checklist"><!-- ✏️EDIT --></ul>
+                        <div class="tab-panel" id="p3-2">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>InSight Tracker 룰 파일(ponytail.md, security.md,
+                                    submission.md 등) 이식 및
+                                    Dokkaebi 전용 ble_firmware.md 신규 작성</li>
+                                <li><span class="ck">✓</span>분실 알림 흐름을 설화 내러티브로 전환한 기능 명세 완성 — "마지막 목격 장소", "사탕으로 유인",
+                                    "도깨비가
+                                    돌려줬다" 등</li>
+                                <li><span class="ck">✓</span>(진행중) 펌웨어 IDE·백엔드 프레임워크·모바일 BLE 라이브러리 등 기술 스택 확정 작업</li>
+                            </ul>
                         </div>
-                        <div class="tab-panel" id="p5-3">
-                            <ul class="checklist"><!-- ✏️EDIT --></ul>
+                        <div class="tab-panel" id="p3-3">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>2인 Claude 협업 구조(기획용·실행용 "안티그래비티") 도입으로 단계별 확인 후 실행 프롬프트 생성
+                                    — 설계 의도가
+                                    실행 단계에서 누락되는 문제 방지</li>
+                                <li><span class="ck">✓</span>(예정) ESP32 BLE 신호 노이즈/거리 오차 보정 — 실측 데이터 기반 캘리브레이션 예정</li>
+                            </ul>
                         </div>
                     </div>
                 </article>
@@ -2425,7 +2449,87 @@
                         </div>
                     </div>
                 </article>
+                <!-- ── PROJECT 09 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">09 · 2026.06 — 기획중</span>
+                            <img src="project9.png" alt="가는 길에 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project9.png</span>
+                        </div>
+                        <div class="project-btns">
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
+                                </svg>Live Demo</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                                </svg>GitHub</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="14" rx="2" />
+                                    <path d="M8 21h8" />
+                                </svg>기획서</a>
+                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+                                </svg>시연영상</a>
+                        </div>
+                    </div>
 
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 09</p>
+                        <h3>가는 길에 (On the Way)</h3>
+                        <p class="project-tagline">"내 주변"이 아닌 "내가 실제로 이동하는 경로"를 검색하는 경로 기반 스마트 경유지 추천 &amp; 내비 연동 서비스
+                        </p>
+                        <p class="project-role">⚙ 1인 기획 전담 (서비스 기획 · 공간데이터 설계 · BM 설계)</p>
+                        <div class="tags">
+                            <span class="tag">PostGIS</span><span class="tag">카카오내비 API</span><span class="tag">TMAP
+                                API</span><span class="tag">공간 쿼리</span><span class="tag">Route-based Search</span>
+                        </div>
+
+                        <div class="tabs" role="tablist">
+                            <button class="tab-btn active" data-tab="p9-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p9-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p9-3" role="tab">트러블슈팅</button>
+                        </div>
+                        <div class="tab-panel active" id="p9-1">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>경로(LineString) 기반 Buffer 공간 쿼리 설계 — PostGIS
+                                    ST_Buffer/ST_Contains로 경로 이탈 허용 거리 내 POI만 필터링</li>
+                                <li><span class="ck">✓</span>진행 방향(좌/우) 판별 로직 — 국내 지도 API가 정밀 도로 링크를 비공개하는 한계를, 경로 폴리라인
+                                    기반 외적(Cross Product) 연산으로 우회하여 유턴 필요 여부 근사 판별</li>
+                                <li><span class="ck">✓</span>DT(드라이브스루) 매장·대로변 판별을 위한 자체 데이터 파이프라인 설계 — 브랜드 매장찾기 크롤링 +
+                                    국토교통부 도로명주소 데이터 활용</li>
+                                <li><span class="ck">✓</span>기존 내비(카카오내비/TMAP)를 대체하지 않고 Intent/Scheme Link로 연동하는 "스마트 검색
+                                    레이어" 아키텍처 설계</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p9-2">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>문제 정의 → 핵심 기능 → 기술 실현 가능성 → BM까지 아우르는 통합 기획서 작성 완료</li>
+                                <li><span class="ck">✓</span>Phase 1(MVP) / Phase 2(ML 고도화) 스코프 분리로 개발 우선순위 명확화</li>
+                                <li><span class="ck">✓</span>경로 기반 타겟팅 광고(O2O) BM 설계 — "어차피 가는 길" 논리로 방문 전환율 우위 확보 가능성
+                                    도출</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="p9-3">
+                            <ul class="checklist">
+                                <li><span class="ck">✓</span>교차로/곡선 구간에서 진행 벡터가 급격히 꺾이는 문제 → 근방 2~3개 포인트 평균 방향 사용으로 보정,
+                                    정확한 스무딩 로직은 추가 설계 필요</li>
+                                <li><span class="ck">✓</span>도로 등급(소로/중로/대로) 판별 시 공공데이터 갱신 주기 한계로 신축 도로 누락 가능성 확인 — 참고
+                                    지표 수준으로 한정</li>
+                                <li><span class="ck">✓</span>동선 효율성 스코어링 가중치(유턴/거리/시간/대로변) 초기값 설정 기준 미확정 — 규칙 기반 가중합으로
+                                    우선 구현 후 조정 예정</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
