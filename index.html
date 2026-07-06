@@ -975,8 +975,8 @@
         }
 
         /* ─────────────────────────────────────────
-   03 Lab / Ideas
-───────────────────────────────────────── */
+        03 Lab / Ideas
+        ───────────────────────────────────────── */
         #lab {
             background: var(--bg-soft);
         }
@@ -2545,93 +2545,6 @@
                     <div class="lab-card reveal">
                         <div class="lab-top">
                             <span class="lab-kind">SERVICE PROPOSAL</span>
-                            <span class="status">DRAFTING</span>
-                        </div>
-                        <h3>RehabClinic OS</h3>
-                        <p class="lab-tagline">동네 물리치료 의원의 도수치료 기록·운동처방·결제까지 한 화면에</p>
-                        <p class="lab-desc">물리치료사 면허 시절 직접 겪은 문제 — 종이 차트, 결제 따로, 운동 처방 따로 — 를 한 번에 해결하는 SaaS 제안서. 진료 흐름
-                            분석 → 정보 구조 설계 → AI 동작 분석 모듈 연동까지 단계별 아키텍처.</p>
-                        <p class="arch-label">ARCHITECTURE SKETCH</p>
-                        <ul class="arch-tree">
-                            <li>Edge: Next.js (App Router) + 모바일 PWA</li>
-                            <li>Core: NestJS REST + RBAC, 진료/결제/처방 도메인 분리</li>
-                            <li>AI Module: 별도 FastAPI 서비스, gRPC 통신</li>
-                            <li>Data: PostgreSQL + S3, 분석용 BigQuery export</li>
-                        </ul>
-                        <div class="lab-tags">
-                            <span class="tag">Next.js</span><span class="tag">NestJS</span><span
-                                class="tag">PostgreSQL</span><span class="tag">Stripe</span><span
-                                class="tag">MediaPipe</span>
-                        </div>
-                    </div>
-
-                    <div class="lab-card reveal">
-                        <div class="lab-top">
-                            <span class="lab-kind">SERVICE PROPOSAL</span>
-                            <span class="status">IDEA</span>
-                        </div>
-                        <h3>Broker Copilot</h3>
-                        <p class="lab-tagline">1인 공인중개사를 위한 매물 등록·홍보·계약서까지 AI 코파일럿</p>
-                        <p class="lab-desc">공인중개사 사무소의 실무 흐름을 따라가며, 매물 사진 → 광고 카피 → SNS 업로드 → 계약서 초안까지 자동화하는 워크플로우. 단순
-                            챗봇이 아니라 직군 특화 코파일럿으로 설계.</p>
-                        <p class="arch-label">ARCHITECTURE SKETCH</p>
-                        <ul class="arch-tree">
-                            <li>Frontend: Next.js + Server Actions</li>
-                            <li>Agent Layer: LangGraph 기반 워크플로우 오케스트레이션</li>
-                            <li>Storage: Supabase (DB + Storage + Auth)</li>
-                            <li>Media Pipeline: FFmpeg 워커로 매물 영상 자동 편집</li>
-                        </ul>
-                        <div class="lab-tags">
-                            <span class="tag">Next.js</span><span class="tag">LangGraph</span><span
-                                class="tag">Supabase</span><span class="tag">OpenAI</span><span
-                                class="tag">FFmpeg</span>
-                        </div>
-                    </div>
-
-                    <div class="lab-card reveal">
-                        <div class="lab-top">
-                            <span class="lab-kind">ARCHITECTURE SKETCH</span>
-                            <span class="status warm">PROTOTYPING</span>
-                        </div>
-                        <h3>Indie Cafe MLOps</h3>
-                        <p class="lab-tagline">작은 카페 한 곳도 자기만의 추천 모델을 가질 수 있는 초경량 MLOps</p>
-                        <p class="lab-desc">POS 데이터로 매출 예측 / 메뉴 추천 모델을 카페 단위로 학습·배포하는 초저비용 MLOps 구성도. AWS 무료 티어를 최대한 활용한
-                            비용 시뮬레이션 포함.</p>
-                        <p class="arch-label">ARCHITECTURE SKETCH</p>
-                        <ul class="arch-tree">
-                            <li>Ingest: POS CSV → S3 → Airflow DAG</li>
-                            <li>Train: MLflow Tracking + SQLite backend</li>
-                            <li>Serve: FastAPI + ONNX, EC2 t4g.nano</li>
-                            <li>Monitor: CloudWatch + 간단 Slack 알림</li>
-                        </ul>
-                        <div class="lab-tags">
-                            <span class="tag">Airflow</span><span class="tag">MLflow</span><span
-                                class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">AWS</span>
-                        </div>
-                    </div>
-
-                    <div class="lab-card reveal">
-                        <div class="lab-top">
-                            <span class="lab-kind">FOR FUN</span>
-                            <span class="status">IDEA</span>
-                        </div>
-                        <h3>Keypad Tower <span style="font-weight:600;color:var(--gray);">(예정)</span></h3>
-                        <p class="lab-tagline">타이핑 속도로 탑을 쌓는 아주 작은 웹 게임</p>
-                        <p class="lab-desc">쉬어가는 코너. 키보드 입력 속도와 정확도에 따라 블록이 올라가는 1인 캐주얼 게임. 심플하지만 디자인은 끝까지 다듬어볼 예정.</p>
-                        <p class="arch-label">ARCHITECTURE SKETCH</p>
-                        <ul class="arch-tree">
-                            <li>Pure Frontend, 서버 없음</li>
-                            <li>로컬 랭킹은 IndexedDB</li>
-                        </ul>
-                        <div class="lab-tags">
-                            <span class="tag">React</span><span class="tag">Canvas API</span><span
-                                class="tag">Zustand</span>
-                        </div>
-                    </div>
-
-                    <div class="lab-card reveal">
-                        <div class="lab-top">
-                            <span class="lab-kind">SERVICE PROPOSAL</span>
                             <span class="status">IDEA</span>
                         </div>
                         <h3>MissionRing</h3>
@@ -2686,6 +2599,7 @@
                             <span class="tag">AI-Hub 71601</span>
                         </div>
                     </div>
+
                     <div class="lab-card reveal">
                         <div class="lab-top">
                             <span class="lab-kind">PROPTECH AI</span>
@@ -2717,6 +2631,7 @@
                             <span class="tag">AI Recommendation System</span>
                         </div>
                     </div>
+
                     <div class="lab-card reveal">
                         <div class="lab-top">
                             <span class="lab-kind">HEALTHCARE AI</span>
@@ -2749,6 +2664,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -2761,146 +2677,214 @@
                 </p>
 
                 <div class="stack-grid">
-                    <div class="stack-cards">
-                        <div class="stack-card reveal">
-                            <div class="stack-head">
-                                <h3>AI / ML</h3><span>AI</span>
-                            </div>
-                            <p class="stack-sub">모델 활용부터 서빙, 평가까지</p>
-                            <ul class="stack-list">
-                                <li>PyTorch <span class="lvl daily">Daily</span></li>
-                                <li>LangChain / LangGraph <span class="lvl daily">Daily</span></li>
-                                <li>HuggingFace <span class="lvl daily">Daily</span></li>
-                                <li>MediaPipe <span class="lvl familiar">Familiar</span></li>
-                                <li>ONNX Runtime <span class="lvl familiar">Familiar</span></li>
-                                <li>vLLM <span class="lvl learning">Learning</span></li>
-                            </ul>
+                    <!-- Languages -->
+                    <div class="stack-card reveal">
+                        <div class="stack-head">
+                            <h3>Languages</h3><span>LANG</span>
                         </div>
+                        <p class="stack-sub">주력 언어와 그 언저리</p>
+                        <ul class="stack-list">
+                            <li>Python <span class="lvl daily">Daily</span></li>
+                            <li>SQL <span class="lvl familiar">Familiar</span></li>
+                            <li>TypeScript <span class="lvl familiar">Familiar</span></li>
+                            <li>Rust (Tauri) <span class="lvl learning">Learning</span></li>
+                        </ul>
+                    </div>
 
-                        <div class="stack-card reveal">
-                            <div class="stack-head">
-                                <h3>Backend</h3><span>BACKEND</span>
-                            </div>
-                            <p class="stack-sub">도메인 모델링과 API 설계</p>
-                            <ul class="stack-list">
-                                <li>FastAPI <span class="lvl daily">Daily</span></li>
-                                <li>Spring Boot <span class="lvl daily">Daily</span></li>
-                                <li>NestJS <span class="lvl familiar">Familiar</span></li>
-                                <li>PostgreSQL <span class="lvl daily">Daily</span></li>
-                                <li>Redis <span class="lvl familiar">Familiar</span></li>
-                                <li>Kafka <span class="lvl learning">Learning</span></li>
-                            </ul>
+                    <!-- Computer Vision -->
+                    <div class="stack-card reveal">
+                        <div class="stack-head">
+                            <h3>Computer Vision</h3><span>VISION</span>
                         </div>
+                        <p class="stack-sub">탐지·세그멘테이션부터 실시간 추론까지</p>
+                        <ul class="stack-list">
+                            <li>OpenCV <span class="lvl daily">Daily</span></li>
+                            <li>YOLOv5 / v8 / v11 <span class="lvl daily">Daily</span></li>
+                            <li>RT-DETRv2 (HGNetv2-L) <span class="lvl daily">Daily</span></li>
+                            <li>MediaPipe <span class="lvl daily">Daily</span></li>
+                            <li>Roboflow <span class="lvl familiar">Familiar</span></li>
+                            <li>ONNX Runtime <span class="lvl familiar">Familiar</span></li>
+                            <li>TensorRT <span class="lvl learning">Learning</span></li>
+                        </ul>
+                    </div>
 
-                        <div class="stack-card reveal">
-                            <div class="stack-head">
-                                <h3>Frontend</h3><span>FRONTEND</span>
-                            </div>
-                            <p class="stack-sub">UI와 인터랙션, 그리고 디테일</p>
-                            <ul class="stack-list">
-                                <li>React 19 <span class="lvl daily">Daily</span></li>
-                                <li>Next.js <span class="lvl daily">Daily</span></li>
-                                <li>TypeScript <span class="lvl daily">Daily</span></li>
-                                <li>TailwindCSS <span class="lvl daily">Daily</span></li>
-                                <li>Zustand / TanStack Query <span class="lvl familiar">Familiar</span></li>
-                            </ul>
+                    <!-- AI / LLM -->
+                    <div class="stack-card reveal">
+                        <div class="stack-head">
+                            <h3>AI / LLM</h3><span>AI</span>
                         </div>
+                        <p class="stack-sub">모델 활용부터 서빙, 평가까지</p>
+                        <ul class="stack-list">
+                            <li>PyTorch <span class="lvl daily">Daily</span></li>
+                            <li>LangChain / LangGraph <span class="lvl daily">Daily</span></li>
+                            <li>HuggingFace <span class="lvl daily">Daily</span></li>
+                            <li>Ollama <span class="lvl daily">Daily</span></li>
+                            <li>RAG 파이프라인 구축 <span class="lvl familiar">Familiar</span></li>
+                            <li>TensorFlow / Keras <span class="lvl familiar">Familiar</span></li>
+                            <li>vLLM <span class="lvl learning">Learning</span></li>
+                            <li>국산 LLM (EXAONE / HyperCLOVA X) <span class="lvl learning">Learning</span></li>
+                        </ul>
+                    </div>
 
-                        <div class="stack-card reveal">
-                            <div class="stack-head">
-                                <h3>Infra / DevOps</h3><span>INFRA</span>
-                            </div>
-                            <p class="stack-sub">직접 굴려본 운영 환경</p>
-                            <ul class="stack-list">
-                                <li>Docker / Compose <span class="lvl daily">Daily</span></li>
-                                <li>AWS (EC2, S3, RDS) <span class="lvl daily">Daily</span></li>
-                                <li>GitHub Actions <span class="lvl daily">Daily</span></li>
-                                <li>Nginx <span class="lvl familiar">Familiar</span></li>
-                                <li>Terraform <span class="lvl learning">Learning</span></li>
-                                <li>Kubernetes <span class="lvl learning">Learning</span></li>
-                            </ul>
+                    <!-- Agentic AI / MCP -->
+                    <div class="stack-card reveal">
+                        <div class="stack-head">
+                            <h3>Agentic AI / MCP</h3><span>AGENT</span>
                         </div>
+                        <p class="stack-sub">에이전트 설계와 도구 연동</p>
+                        <ul class="stack-list">
+                            <li>Claude Code 멀티 에이전트 <span class="lvl daily">Daily</span></li>
+                            <li>프롬프트 엔지니어링 <span class="lvl daily">Daily</span></li>
+                            <li>MCP 서버 구축 <span class="lvl familiar">Familiar</span></li>
+                        </ul>
+                    </div>
 
-                        <div class="lvl-legend reveal">
-                            <span><i class="d"></i> Daily</span>
-                            <span><i class="f"></i> Familiar</span>
-                            <span><i class="l"></i> Learning</span>
+                    <!-- Backend -->
+                    <div class="stack-card reveal">
+                        <div class="stack-head">
+                            <h3>Backend</h3><span>BACKEND</span>
+                        </div>
+                        <p class="stack-sub">도메인 모델링과 API 설계</p>
+                        <ul class="stack-list">
+                            <li>FastAPI <span class="lvl daily">Daily</span></li>
+                            <li>Flask / Flask-SocketIO <span class="lvl daily">Daily</span></li>
+                            <li>PostgreSQL <span class="lvl daily">Daily</span></li>
+                            <li>MySQL / ORM <span class="lvl daily">Daily</span></li>
+                            <li>Auth (JWT / OAuth2 / Session) <span class="lvl familiar">Familiar</span></li>
+                            <li>WebSocket / 실시간 알림 <span class="lvl familiar">Familiar</span></li>
+                            <li>외부 API 연동 (Kakao Maps / DART / ITS) <span class="lvl familiar">Familiar</span></li>
+                            <li>Redis <span class="lvl learning">Learning</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="stack-card reveal">
+                        <div class="stack-head">
+                            <h3>Frontend</h3><span>FRONTEND</span>
+                        </div>
+                        <p class="stack-sub">대시보드와 화면, 그리고 디테일</p>
+                        <ul class="stack-list">
+                            <li>Streamlit <span class="lvl daily">Daily</span></li>
+                            <li>Jinja2 / Bootstrap 5.3 <span class="lvl daily">Daily</span></li>
+                            <li>React <span class="lvl learning">Learning</span></li>
+                            <li>React Native <span class="lvl learning">Learning</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Media / Video -->
+                    <div class="stack-card reveal">
+                        <div class="stack-head">
+                            <h3>Media / Video</h3><span>MEDIA</span>
+                        </div>
+                        <p class="stack-sub">영상 스트리밍과 메타데이터 처리</p>
+                        <ul class="stack-list">
+                            <li>RTSP 카메라 스트리밍 <span class="lvl familiar">Familiar</span></li>
+                            <li>FFmpeg / ffprobe <span class="lvl familiar">Familiar</span></li>
+                            <li>EXIF / GPS 메타데이터 <span class="lvl familiar">Familiar</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Infra / DevOps -->
+                    <div class="stack-card reveal">
+                        <div class="stack-head">
+                            <h3>Infra / DevOps</h3><span>INFRA</span>
+                        </div>
+                        <p class="stack-sub">직접 굴려본 운영 환경</p>
+                        <ul class="stack-list">
+                            <li>Docker / Compose <span class="lvl daily">Daily</span></li>
+                            <li>WSL2 / Ubuntu <span class="lvl daily">Daily</span></li>
+                            <li>Git / Sourcetree <span class="lvl daily">Daily</span></li>
+                            <li>GitHub Actions <span class="lvl daily">Daily</span></li>
+                            <li>로컬 GPU 서버 운영 (A4000 / 1060) <span class="lvl familiar">Familiar</span></li>
+                            <li>Cloudflare R2 (Webhook) <span class="lvl familiar">Familiar</span></li>
+                            <li>Nginx <span class="lvl familiar">Familiar</span></li>
+                            <li>ngrok <span class="lvl familiar">Familiar</span></li>
+                            <li>AWS (EC2 / S3 / RDS) <span class="lvl learning">Learning</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="lvl-legend reveal">
+                        <span><i class="d"></i> Daily</span>
+                        <span><i class="f"></i> Familiar</span>
+                        <span><i class="l"></i> Learning</span>
+                    </div>
+
+                </div>
+
+                <!-- Beyond Code -->
+                <aside class="beyond-card reveal">
+                    <div class="beyond-head">
+                        <h3>Beyond Code</h3>
+                        <span class="spark">✦</span>
+                    </div>
+                    <p class="beyond-sub">개발 바깥의 도메인에서 직접 면허·자격을 따며 익힌 현장 감각.</p>
+
+                    <div class="cert" style="border-top:none; padding-top:6px;">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 12h4l3-7 4 14 3-7h4" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>물리치료사 면허</h4><span>2019</span>
+                            </div>
+                            <p class="cert-org">보건복지부</p>
+                            <p class="cert-desc">병의원 임상 현장을 직접 경험한 의료서비스 전반의 이해</p>
                         </div>
                     </div>
 
-                    <!-- Beyond Code -->
-                    <aside class="beyond-card reveal">
-                        <div class="beyond-head">
-                            <h3>Beyond Code</h3>
-                            <span class="spark">✦</span>
-                        </div>
-                        <p class="beyond-sub">개발 바깥의 도메인에서 직접 면허·자격을 따며 익힌 현장 감각.</p>
-
-                        <div class="cert" style="border-top:none; padding-top:6px;">
-                            <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.8">
-                                    <path d="M3 12h4l3-7 4 14 3-7h4" />
-                                </svg></div>
-                            <div class="cert-body">
-                                <div class="cert-top">
-                                    <h4>물리치료사 면허</h4><span>2019</span>
-                                </div>
-                                <p class="cert-org">보건복지부</p>
-                                <p class="cert-desc">병의원 임상 현장을 직접 경험한 의료서비스 전반의 이해</p>
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 11 12 4l9 7" />
+                                <path d="M5 10v10h14V10" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>공인중개사 자격</h4><span>2022</span>
                             </div>
+                            <p class="cert-org">한국산업인력공단</p>
+                            <p class="cert-desc">부동산 매물·계약·시세 데이터 도메인 이해</p>
                         </div>
+                    </div>
 
-                        <div class="cert">
-                            <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.8">
-                                    <path d="M3 11 12 4l9 7" />
-                                    <path d="M5 10v10h14V10" />
-                                </svg></div>
-                            <div class="cert-body">
-                                <div class="cert-top">
-                                    <h4>공인중개사 자격</h4><span>2022</span>
-                                </div>
-                                <p class="cert-org">한국산업인력공단</p>
-                                <p class="cert-desc">부동산 매물·계약·시세 데이터 도메인 이해</p>
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M5 4h11v8a5.5 5.5 0 0 1-11 0V4Z" />
+                                <path d="M16 6h2.5a2.5 2.5 0 0 1 0 5H16M7 21h7" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>국제 바리스타 자격</h4><span>2021</span>
                             </div>
+                            <p class="cert-org">SCA</p>
+                            <p class="cert-desc">F&amp;B / 소상공인 도메인 — 운영 효율과 고객 흐름</p>
                         </div>
+                    </div>
 
-                        <div class="cert">
-                            <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.8">
-                                    <path d="M5 4h11v8a5.5 5.5 0 0 1-11 0V4Z" />
-                                    <path d="M16 6h2.5a2.5 2.5 0 0 1 0 5H16M7 21h7" />
-                                </svg></div>
-                            <div class="cert-body">
-                                <div class="cert-top">
-                                    <h4>국제 바리스타 자격</h4><span>2021</span>
-                                </div>
-                                <p class="cert-org">SCA</p>
-                                <p class="cert-desc">F&amp;B / 소상공인 도메인 — 운영 효율과 고객 흐름</p>
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="13" r="8" />
+                                <path d="M12 9v4l2.5 2.5M9 2h6" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>기타 자격 · 수료</h4><span>—</span>
                             </div>
+                            <p class="cert-org">Various</p>
+                            <p class="cert-desc">필요할 때마다 도메인을 직접 파고드는 학습 습관</p>
                         </div>
+                    </div>
 
-                        <div class="cert">
-                            <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.8">
-                                    <circle cx="12" cy="13" r="8" />
-                                    <path d="M12 9v4l2.5 2.5M9 2h6" />
-                                </svg></div>
-                            <div class="cert-body">
-                                <div class="cert-top">
-                                    <h4>기타 자격 · 수료</h4><span>—</span>
-                                </div>
-                                <p class="cert-org">Various</p>
-                                <p class="cert-desc">필요할 때마다 도메인을 직접 파고드는 학습 습관</p>
-                            </div>
-                        </div>
-
-                        <div class="quote">
-                            <strong>Simple is Best.</strong> 복잡한 도메인일수록 깔끔한 결정을 내릴 수 있는 사람이 되고 싶어요. 코드도, 디자인도, 서비스의
-                            흐름도요.
-                        </div>
-                    </aside>
-                </div>
+                    <div class="quote">
+                        <strong>Simple is Best.</strong> 복잡한 도메인일수록 깔끔한 결정을 내릴 수 있는 사람이 되고 싶어요. 코드도, 디자인도, 서비스의
+                        흐름도요.
+                    </div>
+                </aside>
+            </div>
             </div>
         </section>
 
