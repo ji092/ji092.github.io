@@ -149,6 +149,10 @@
             margin-bottom: 28px;
         }
 
+        .section-title--sub {
+            margin-top: 64px;
+        }
+
         .section-lead {
             max-width: 640px;
             font-size: 17px;
@@ -973,6 +977,15 @@
             color: var(--gray-soft);
         }
 
+        .progress-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 14px;
+        }
+
         /* ─────────────────────────────────────────
         03 Lab / Ideas
         ───────────────────────────────────────── */
@@ -1300,6 +1313,24 @@
             font-size: 14px;
             color: var(--ink-soft);
             line-height: 1.65;
+        }
+
+        .cert-group-title {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin: 22px 0 2px;
+        }
+
+        .cert-group-title:first-of-type {
+            margin-top: 4px;
+        }
+
+        .cert--no-top {
+            border-top: none;
+            padding-top: 6px;
         }
 
         .quote {
@@ -1823,9 +1854,10 @@
         <!-- ═══════════ 02 PROJECTS ═══════════ -->
         <section class="section" id="projects">
             <div class="container">
-                <div class="eyebrow reveal">02 <span class="rule"></span> PROJECTS</div>
+                <div class="eyebrow reveal">02-1 <span class="rule"></span> PROJECTS</div>
                 <h2 class="section-title reveal">무엇을 만들어 보았는가</h2>
-                <p class="section-lead reveal">미니 프로젝트들. 협업으로 첫발을 떼며, 1인 풀스택으로 기획부터 배포까지.<br> 시연 영상과 발표자료, 트러블슈팅까지 같이
+                <p class="section-lead reveal">미니 프로젝트들. <strong>협업</strong>으로 첫발을 떼며, <strong>1인 풀스택</strong>으로 기획부터
+                    배포까지.<br> 시연 영상과 발표자료, 트러블슈팅까지 같이
                     볼 수 있어요.</p>
 
                 <!-- ── PROJECT 01 ── -->
@@ -1833,30 +1865,29 @@
                     <div class="project-media">
                         <div class="project-thumb">
                             <span class="date-badge">01 · 2026.03.16 — 2026.04.07</span>
-                            <!-- ✏️ project1.png 업로드 시 자동 표시 -->
                             <img src="project1.png" alt="CRACK 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
                             <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project1.png</span>
                         </div>
                         <div class="project-btns">
-                            <!-- ✏️ href 를 실제 링크로 교체하세요 -->
                             <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path
                                         d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
-                                </svg>Live Demo</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="currentColor">
+                                </svg>발표 영상</a>
+                            <a class="pbtn" href="https://github.com/ji092/CRACK_team" target="_blank"
+                                rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                                     <path
                                         d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
                                 </svg>GitHub</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <a class="pbtn" href="pdf/p1-slides.pdf" target="_blank" rel="noopener"><svg width="15"
+                                    height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <rect x="3" y="4" width="18" height="14" rx="2" />
                                     <path d="M8 21h8" />
                                 </svg>발표자료</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <a class="pbtn" href="https://www.youtube.com/watch?v=NVtaf0IG5E0" target="_blank"
+                                rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="9" />
                                     <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
                                 </svg>시연영상</a>
@@ -1912,86 +1943,6 @@
                                 </li>
                                 <li><span class="ck">✓</span>모델 과적합 탐지 — Precision 1.000 출현을 데이터 누수 신호로 판단, 데이터 재수집 및 분리
                                     기준 재설계</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- ── PROJECT 02 ── -->
-                <article class="project reveal">
-                    <div class="project-media">
-                        <div class="project-thumb">
-                            <span class="date-badge">02 · 2026.04 — 진행중</span>
-                            <img src="project2.png" alt="Argos 미리보기"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project2.png</span>
-                        </div>
-                        <div class="project-btns">
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
-                                </svg>Live Demo</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
-                                </svg>GitHub</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="14" rx="2" />
-                                    <path d="M8 21h8" />
-                                </svg>발표자료</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="9" />
-                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
-                                </svg>시연영상</a>
-                        </div>
-                    </div>
-
-                    <div class="project-body">
-                        <p class="project-num">PROJECT 02</p>
-                        <h3>Argos</h3>
-                        <p class="project-tagline">터널 CCTV 이상 탐지 시스템 — 차량정체·사고·화재·연기 실시간 탐지 및 알림</p>
-                        <p class="project-role">⚙ AI 모델 학습 전담 · 백엔드 · 배포</p>
-                        <div class="tags">
-                            <span class="tag">RT-DETRv2</span><span class="tag">YOLOv5</span><span
-                                class="tag">FastAPI</span><span class="tag">Flask-SocketIO</span><span
-                                class="tag">Next.js</span><span class="tag">Docker Compose</span>
-                        </div>
-
-                        <div class="tabs" role="tablist">
-                            <button class="tab-btn active" data-tab="p2-1" role="tab">강조 기술</button>
-                            <button class="tab-btn" data-tab="p2-2" role="tab">핵심 성과</button>
-                            <button class="tab-btn" data-tab="p2-3" role="tab">트러블슈팅</button>
-                        </div>
-                        <div class="tab-panel active" id="p2-1">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>RT-DETRv2 (HGNetv2-L 백본) 객체 탐지 모델 학습 및 최적화</li>
-                                <li><span class="ck">✓</span>Albumentations 기반 클래스별 차등 증강 파이프라인 구성</li>
-                                <li><span class="ck">✓</span>COCO JSON 어노테이션 커스텀 재구성 및 라벨 정제</li>
-                                <li><span class="ck">✓</span>APScheduler + Flask-SocketIO 기반 폴링 아키텍처 설계</li>
-                            </ul>
-                        </div>
-                        <div class="tab-panel" id="p2-2">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>RT-DETRv2 V3 mAP@50 0.952 달성 (fire 0.983 / smoke 0.939 /
-                                    carlight 0.936)</li>
-                                <li><span class="ck">✓</span>연기 미탐율 YOLO 대비 4.8배 개선 (RT-DETRv2 39건 vs YOLO 계열 187건)</li>
-                                <li><span class="ck">✓</span>불량 라벨(0 0 0 0) 9,840건 제거 및 S3 클래스 매핑 오류 수정으로 모델 성능 회복</li>
-                                <li><span class="ck">✓</span>12,853장 / 21,802개 어노테이션 규모 데이터셋 구축</li>
-                            </ul>
-                        </div>
-                        <div class="tab-panel" id="p2-3">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>V2 학습 시 무효 bbox(0 0 0 0) 9,840건으로 성능 저하 → 라벨 전수 검증 후 제거로 해결
-                                </li>
-                                <li><span class="ck">✓</span>S3 AI Hub JSON "class" 필드가 서브카테고리 식별자임을 뒤늦게 확인 → middle
-                                    classification 기준 재매핑으로 클래스 오염 해소</li>
-                                <li><span class="ck">✓</span>Windows 한글 경로로 인한 OpenCV 프레임 저장 무음 실패 → 영문 경로로 전환하여 해결</li>
-                                <li><span class="ck">✓</span>야간 헤드라이트 반사광이 fire/carlight로 오탐 → 오탐 프레임 캡처 후 hard
-                                    negative로 레이블링하여 V4 재학습 예정</li>
                             </ul>
                         </div>
                     </div>
@@ -2159,10 +2110,11 @@
                 <article class="project reveal">
                     <div class="project-media">
                         <div class="project-thumb">
-                            <span class="date-badge">05 · 2026.06 — 기획/개발중</span>
-                            <img src="project5.png" alt="도깨비 미리보기"
+                            <span class="date-badge">05 · Crack Dev</span>
+                            <img src="project-crackdev.png" alt="CRACK Dev 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project5.png</span>
+                            <span class="thumb-fallback" style="display:none;">PROJECT
+                                IMAGE<br>project-crackdev.png</span>
                         </div>
                         <div class="project-btns">
                             <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
@@ -2190,51 +2142,65 @@
 
                     <div class="project-body">
                         <p class="project-num">PROJECT 05</p>
-                        <h3>도깨비 (Dokkaebi)</h3>
-                        <p class="project-tagline">한국 설화 모티프의 BLE 태그 기반 스마트 분실물 추적 앱 — "잃어버린 물건은 도깨비가 숨긴 것"</p>
-                        <p class="project-role">⚙ 1인 기획·개발 전담 (펌웨어 · 모바일 · 백엔드)</p>
+                        <h3>CRACKv2 (개인 리팩터링 버전)</h3>
+                        <p class="project-tagline">CRACK 협업 프로젝트를 1인 리팩터링한 개인 버전<br> — 구조 개선과 코드 품질 고도화 및 도로 배수시설 탐지 모델에
+                            집중
+                        </p>
+                        <p class="project-role">⚙ 1인 리팩터링 (백엔드 구조 개선 · 코드 품질· 오염파손배수시설 탐지 AI 모델)</p>
                         <div class="tags">
-                            <span class="tag">ESP32 DevKitC</span><span class="tag">BLE</span><span
-                                class="tag">Android</span><span class="tag">FastAPI (예정)</span><span
-                                class="tag">PlatformIO (검토중)</span>
+                            <span class="tag">Python</span><span class="tag">FastAPI</span>
                         </div>
 
                         <div class="tabs" role="tablist">
-                            <button class="tab-btn active" data-tab="p3-1" role="tab">강조 기술</button>
-                            <button class="tab-btn" data-tab="p3-2" role="tab">핵심 성과</button>
-                            <button class="tab-btn" data-tab="p3-3" role="tab">트러블슈팅</button>
+                            <button class="tab-btn active" data-tab="p5-1" role="tab">강조 기술</button>
+                            <button class="tab-btn" data-tab="p5-2" role="tab">핵심 성과</button>
+                            <button class="tab-btn" data-tab="p5-3" role="tab">트러블슈팅</button>
                         </div>
-                        <div class="tab-panel active" id="p3-1">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>ESP32 기반 BLE 태그 펌웨어 설계 — GPS 없이 BLE 신호만으로 위치 추정</li>
-                                <li><span class="ck">✓</span>분실물 카테고리별 캐릭터(차키=바퀴도깨비, 지갑=금전도깨비 등)를 전 기능에 매핑한 스토리텔링 UX 설계
-                                </li>
-                                <li><span class="ck">✓</span>InSight Tracker 프로젝트의 에이전트 기반 워크플로우 구조를 재사용한 멀티 에이전트 개발 체계
-                                    구축
-                                    (PM·보안·기획·디자인·개발·QA·배포 역할 분리)</li>
-                                <li><span class="ck">✓</span>YAGNI 원칙 기반 MVP 스코프 관리 — BLE-only, 솔로 개발에 불필요한 테스트 자동화 등
-                                    의도적 제외</li>
-                            </ul>
+                        <div class="tab-panel active" id="p5-1">
+                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
                         </div>
-                        <div class="tab-panel" id="p3-2">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>InSight Tracker 룰 파일(ponytail.md, security.md,
-                                    submission.md 등) 이식 및
-                                    Dokkaebi 전용 ble_firmware.md 신규 작성</li>
-                                <li><span class="ck">✓</span>분실 알림 흐름을 설화 내러티브로 전환한 기능 명세 완성 — "마지막 목격 장소", "사탕으로 유인",
-                                    "도깨비가
-                                    돌려줬다" 등</li>
-                                <li><span class="ck">✓</span>(진행중) 펌웨어 IDE·백엔드 프레임워크·모바일 BLE 라이브러리 등 기술 스택 확정 작업</li>
-                            </ul>
+                        <div class="tab-panel" id="p5-2">
+                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
                         </div>
-                        <div class="tab-panel" id="p3-3">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>2인 Claude 협업 구조(기획용·실행용 "안티그래비티") 도입으로 단계별 확인 후 실행 프롬프트 생성
-                                    — 설계 의도가
-                                    실행 단계에서 누락되는 문제 방지</li>
-                                <li><span class="ck">✓</span>(예정) ESP32 BLE 신호 노이즈/거리 오차 보정 — 실측 데이터 기반 캘리브레이션 예정</li>
-                            </ul>
+                        <div class="tab-panel" id="p5-3">
+                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
                         </div>
+                    </div>
+                </article>
+                <div class="eyebrow reveal">02-2 <span class="rule"></span> PROJECTS</div>
+                <h2 class="section-title reveal section-title--sub">무엇을 만들고 있는가</h2>
+                <p class="section-lead reveal">지금 <strong>진행 중</strong>인 프로젝트들. <br> 완성 전, 진행 사항을 확인할 수 있어요.</p>
+
+                <!-- ── PROJECT 02 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">02 · 2026.04 — 진행중</span>
+                            <img src="project2.png" alt="Argos 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project2.png</span>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 02</p>
+                        <h3>Argos</h3>
+                        <p class="project-tagline">터널 CCTV 이상 탐지 시스템 — 차량정체·사고·화재·연기 실시간 탐지 및 알림</p>
+                        <p class="project-role">⚙ AI 모델 학습 전담 · 백엔드 · 배포</p>
+                        <div class="tags">
+                            <span class="tag">RT-DETRv2</span><span class="tag">YOLOv5</span><span
+                                class="tag">FastAPI</span><span class="tag">Flask-SocketIO</span><span
+                                class="tag">Next.js</span><span class="tag">Docker Compose</span>
+                        </div>
+
+                        <p class="progress-title">현재 진행상황</p>
+                        <ul class="checklist">
+                            <li><span class="ck">✓</span>RT-DETRv2 (HGNetv2-L 백본) 객체 탐지 모델 학습 및 최적화 — V3 mAP@50 0.952
+                                달성 (fire 0.983 / smoke 0.939 / carlight 0.936)</li>
+                            <li><span class="ck">✓</span>연기 미탐율 YOLO 대비 4.8배 개선 (RT-DETRv2 39건 vs YOLO 계열 187건)</li>
+                            <li><span class="ck">✓</span>12,853장 / 21,802개 어노테이션 규모 데이터셋 구축 완료</li>
+                            <li><span class="ck">✓</span>야간 헤드라이트 반사광 오탐 프레임을 hard negative로 레이블링하여 V4 재학습 예정</li>
+                        </ul>
                     </div>
                 </article>
 
@@ -2246,28 +2212,6 @@
                             <img src="project6.png" alt="Nudge 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
                             <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project6.png</span>
-                        </div>
-                        <div class="project-btns">
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
-                                </svg>Live Demo</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
-                                </svg>GitHub</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="14" rx="2" />
-                                    <path d="M8 21h8" />
-                                </svg>발표자료</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="9" />
-                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
-                                </svg>시연영상</a>
                         </div>
                     </div>
 
@@ -2282,25 +2226,13 @@
                                 class="tag">pywin32</span><span class="tag">Ollama / Qwen3 8B</span>
                         </div>
 
-                        <div class="tabs" role="tablist">
-                            <button class="tab-btn active" data-tab="p6-1" role="tab">강조 기술</button>
-                            <button class="tab-btn" data-tab="p6-2" role="tab">핵심 성과</button>
-                            <button class="tab-btn" data-tab="p6-3" role="tab">트러블슈팅</button>
-                        </div>
-                        <div class="tab-panel active" id="p6-1">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>Tauri(Rust) 기반 경량 데스크탑 앱 구축</li>
-                                <li><span class="ck">✓</span>pywin32를 활용한 Windows 창 수집 및 제어</li>
-                                <li><span class="ck">✓</span>Ollama + Qwen3 8B 로컬 LLM 연동 (외부 데이터 전송 없음)</li>
-                                <li><span class="ck">✓</span>Rule Engine → LLM 분리 설계 (판단은 룰 엔진, 자연어 생성만 LLM)</li>
-                            </ul>
-                        </div>
-                        <div class="tab-panel" id="p6-2">
-                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
-                        </div>
-                        <div class="tab-panel" id="p6-3">
-                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
-                        </div>
+                        <p class="progress-title">현재 진행상황</p>
+                        <ul class="checklist">
+                            <li><span class="ck">✓</span>Tauri(Rust) 기반 경량 데스크탑 앱 구축</li>
+                            <li><span class="ck">✓</span>pywin32를 활용한 Windows 창 수집 및 제어</li>
+                            <li><span class="ck">✓</span>Ollama + Qwen3 8B 로컬 LLM 연동 (외부 데이터 전송 없음)</li>
+                            <li><span class="ck">✓</span>Rule Engine → LLM 분리 설계 (판단은 룰 엔진, 자연어 생성만 LLM)</li>
+                        </ul>
                     </div>
                 </article>
 
@@ -2308,103 +2240,15 @@
                 <article class="project reveal">
                     <div class="project-media">
                         <div class="project-thumb">
-                            <span class="date-badge">07 · 2026.07 — 진행중</span>
-                            <img src="project7.png" alt="MissionRing 미리보기"
+                            <span class="date-badge">07 · 2026.06.21 — 진행중</span>
+                            <img src="project8.png" alt="InSight Tracker 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project7.png</span>
-                        </div>
-                        <div class="project-btns">
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
-                                </svg>Live Demo</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
-                                </svg>GitHub</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="14" rx="2" />
-                                    <path d="M8 21h8" />
-                                </svg>발표자료</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="9" />
-                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
-                                </svg>시연영상</a>
+                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project8.png</span>
                         </div>
                     </div>
 
                     <div class="project-body">
                         <p class="project-num">PROJECT 07</p>
-                        <h3>MissionRing</h3>
-                        <p class="project-tagline">AI 사진 인증 기반 미션 알람 앱 — 기상 루틴 완료를 VLM으로 검증하여 알람 해제</p>
-                        <p class="project-role">⚙ 기획 · AI 모델 · 백엔드</p>
-                        <div class="tags">
-                            <span class="tag">React Native</span><span class="tag">Expo</span><span
-                                class="tag">FastAPI</span><span class="tag">Claude Vision API</span><span
-                                class="tag">Whisper STT</span><span class="tag">Supabase</span>
-                        </div>
-
-                        <div class="tabs" role="tablist">
-                            <button class="tab-btn active" data-tab="p7-1" role="tab">강조 기술</button>
-                            <button class="tab-btn" data-tab="p7-2" role="tab">핵심 성과</button>
-                            <button class="tab-btn" data-tab="p7-3" role="tab">트러블슈팅</button>
-                        </div>
-                        <div class="tab-panel active" id="p7-1">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>Claude Vision API를 활용한 VLM 기반 사진 미션 검증 파이프라인</li>
-                                <li><span class="ck">✓</span>EXIF 메타데이터 분석을 통한 사진 재사용 방지 (시간 위변조 탐지)</li>
-                                <li><span class="ck">✓</span>Whisper STT 기반 통화 녹음 전사 및 요약</li>
-                                <li><span class="ck">✓</span>Supabase RBAC를 활용한 보호자/사용자 계정 분리 구조</li>
-                            </ul>
-                        </div>
-                        <div class="tab-panel" id="p7-2">
-                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
-                        </div>
-                        <div class="tab-panel" id="p7-3">
-                            <ul class="checklist"><!-- ✏️EDIT 추후 업데이트 --></ul>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- ── PROJECT 08 ── -->
-                <article class="project reveal">
-                    <div class="project-media">
-                        <div class="project-thumb">
-                            <span class="date-badge">08 · 2026.06.21 — 진행중</span>
-                            <img src="project8.png" alt="InSight Tracker 미리보기"
-                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-                            <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project8.png</span>
-                        </div>
-                        <div class="project-btns">
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
-                                </svg>Live Demo</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
-                                </svg>GitHub</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="14" rx="2" />
-                                    <path d="M8 21h8" />
-                                </svg>발표자료</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="9" />
-                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
-                                </svg>시연영상</a>
-                        </div>
-                    </div>
-
-                    <div class="project-body">
-                        <p class="project-num">PROJECT 08</p>
                         <h3>InSight Tracker</h3>
                         <p class="project-tagline">카메라 기반 손 제스처 인식과 아이트래킹으로 PC에서 스마트폰을 원격 제어하는 AI 포트폴리오 프로젝트</p>
                         <p class="project-role">⚙ PM · AI 모델 · 기획</p>
@@ -2413,75 +2257,30 @@
                                 class="tag">OpenCV</span><span class="tag">ADB</span>
                         </div>
 
-                        <div class="tabs" role="tablist">
-                            <button class="tab-btn active" data-tab="p8-1" role="tab">강조 기술</button>
-                            <button class="tab-btn" data-tab="p8-2" role="tab">핵심 성과</button>
-                            <button class="tab-btn" data-tab="p8-3" role="tab">트러블슈팅</button>
-                        </div>
-                        <div class="tab-panel active" id="p8-1">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>MediaPipe Hands 21-landmark 좌표 추출 기반 제스처 인식</li>
-                                <li><span class="ck">✓</span>룰 기반 커스텀 제스처 분류 (모델 재학습 없음)</li>
-                                <li><span class="ck">✓</span>ADB를 통한 원격 기기 제어 및 상태 감지</li>
-                                <li><span class="ck">✓</span>퍼유저 캘리브레이션 (5샘플 평균 → calibration.json 저장)</li>
-                            </ul>
-                        </div>
-                        <div class="tab-panel" id="p8-2">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>Level 1 완료: 화면 미러링 + ADB 마우스 원격제어</li>
-                                <li><span class="ck">✓</span>11개 제스처 매핑 확정 (기본 모드 9개 + 전화 모드 2개)</li>
-                                <li><span class="ck">✓</span>MediaPipe 0.10.14 버전 고정으로 레거시 API 호환성 확보</li>
-                                <li><span class="ck">✓</span>에이전트 인프라(.agents/) 단일 루트로 통합 완료</li>
-                            </ul>
-                        </div>
-                        <div class="tab-panel" id="p8-3">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>mediapipe 신버전 레거시 API 제거 → 0.10.14 버전 고정으로 해결</li>
-                                <li><span class="ck">✓</span>eventlet + mediapipe 충돌 → monkey_patch(thread=False) 적용
-                                </li>
-                                <li><span class="ck">✓</span>gesture_recognizer.task 모델 파일 부재 시 크래시 → graceful
-                                    degradation 구현 (11개 중 7개 정상 동작)</li>
-                                <li><span class="ck">✓</span>zoom_threshold 캘리브레이션 스키마 불일치 → 제스처 재설계 후 vestigial 필드로 식별
-                                    및 정리</li>
-                            </ul>
-                        </div>
+                        <p class="progress-title">현재 진행상황</p>
+                        <ul class="checklist">
+                            <li><span class="ck">✓</span>Level 1 완료: 화면 미러링 + ADB 마우스 원격제어</li>
+                            <li><span class="ck">✓</span>11개 제스처 매핑 확정 (기본 모드 9개 + 전화 모드 2개), MediaPipe Hands
+                                21-landmark 좌표 추출 기반 인식</li>
+                            <li><span class="ck">✓</span>퍼유저 캘리브레이션 (5샘플 평균 → calibration.json 저장)</li>
+                            <li><span class="ck">✓</span>gesture_recognizer.task 모델 파일 부재 시 graceful degradation 구현 (11개
+                                중 7개 정상 동작)</li>
+                        </ul>
                     </div>
                 </article>
-                <!-- ── PROJECT 09 ── -->
+                <!-- ── PROJECT 08 ── -->
                 <article class="project reveal">
                     <div class="project-media">
                         <div class="project-thumb">
-                            <span class="date-badge">09 · 2026.06 — 기획중</span>
+                            <span class="date-badge">08 · 2026.06 — 기획중</span>
                             <img src="project9.png" alt="가는 길에 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
                             <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project9.png</span>
                         </div>
-                        <div class="project-btns">
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" />
-                                </svg>Live Demo</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .31.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
-                                </svg>GitHub</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="14" rx="2" />
-                                    <path d="M8 21h8" />
-                                </svg>기획서</a>
-                            <a class="pbtn" href="#" target="_blank" rel="noopener"><svg width="15" height="15"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="9" />
-                                    <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
-                                </svg>시연영상</a>
-                        </div>
                     </div>
 
                     <div class="project-body">
-                        <p class="project-num">PROJECT 09</p>
+                        <p class="project-num">PROJECT 08</p>
                         <h3>가는 길에 (On the Way)</h3>
                         <p class="project-tagline">"내 주변"이 아닌 "내가 실제로 이동하는 경로"를 검색하는 경로 기반 스마트 경유지 추천 &amp; 내비 연동 서비스
                         </p>
@@ -2491,41 +2290,50 @@
                                 API</span><span class="tag">공간 쿼리</span><span class="tag">Route-based Search</span>
                         </div>
 
-                        <div class="tabs" role="tablist">
-                            <button class="tab-btn active" data-tab="p9-1" role="tab">강조 기술</button>
-                            <button class="tab-btn" data-tab="p9-2" role="tab">핵심 성과</button>
-                            <button class="tab-btn" data-tab="p9-3" role="tab">트러블슈팅</button>
+                        <p class="progress-title">현재 진행상황</p>
+                        <ul class="checklist">
+                            <li><span class="ck">✓</span>문제 정의 → 핵심 기능 → 기술 실현 가능성 → BM까지 아우르는 통합 기획서 작성 완료</li>
+                            <li><span class="ck">✓</span>Phase 1(MVP) / Phase 2(ML 고도화) 스코프 분리로 개발 우선순위 명확화</li>
+                            <li><span class="ck">✓</span>경로(LineString) 기반 Buffer 공간 쿼리·진행 방향 판별 로직 설계 완료</li>
+                            <li><span class="ck">✓</span>동선 효율성 스코어링 가중치(유턴/거리/시간/대로변) 초기값은 규칙 기반 가중합으로 우선 구현 후 조정
+                                예정</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- ── PROJECT 09 ── -->
+                <article class="project reveal">
+                    <div class="project-media">
+                        <div class="project-thumb">
+                            <span class="date-badge">09 · 2026.07.20 — 진행중</span>
+                            <img src="project-oursarchive.png" alt="Ours Archive 미리보기"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                            <span class="thumb-fallback" style="display:none;">PROJECT
+                                IMAGE<br>project-oursarchive.png</span>
                         </div>
-                        <div class="tab-panel active" id="p9-1">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>경로(LineString) 기반 Buffer 공간 쿼리 설계 — PostGIS
-                                    ST_Buffer/ST_Contains로 경로 이탈 허용 거리 내 POI만 필터링</li>
-                                <li><span class="ck">✓</span>진행 방향(좌/우) 판별 로직 — 국내 지도 API가 정밀 도로 링크를 비공개하는 한계를, 경로 폴리라인
-                                    기반 외적(Cross Product) 연산으로 우회하여 유턴 필요 여부 근사 판별</li>
-                                <li><span class="ck">✓</span>DT(드라이브스루) 매장·대로변 판별을 위한 자체 데이터 파이프라인 설계 — 브랜드 매장찾기 크롤링 +
-                                    국토교통부 도로명주소 데이터 활용</li>
-                                <li><span class="ck">✓</span>기존 내비(카카오내비/TMAP)를 대체하지 않고 Intent/Scheme Link로 연동하는 "스마트 검색
-                                    레이어" 아키텍처 설계</li>
-                            </ul>
+                    </div>
+
+                    <div class="project-body">
+                        <p class="project-num">PROJECT 09</p>
+                        <h3>Ours Archive</h3>
+                        <p class="project-tagline">연애·결혼·임신출산·육아를 시간 순서대로 이어 기록하는 커플/가족 아카이브 PWA <br>— "우리 둘의 모든 순간을, 한
+                            페이지에 담아요"</p>
+                        <p class="project-role">⚙ 1인 기획·개발 전담 (기획 · 프론트엔드 · PWA)</p>
+                        <div class="tags">
+                            <span class="tag">React</span><span class="tag">PWA</span><span class="tag">RBAC</span><span
+                                class="tag">Privacy by Design</span>
                         </div>
-                        <div class="tab-panel" id="p9-2">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>문제 정의 → 핵심 기능 → 기술 실현 가능성 → BM까지 아우르는 통합 기획서 작성 완료</li>
-                                <li><span class="ck">✓</span>Phase 1(MVP) / Phase 2(ML 고도화) 스코프 분리로 개발 우선순위 명확화</li>
-                                <li><span class="ck">✓</span>경로 기반 타겟팅 광고(O2O) BM 설계 — "어차피 가는 길" 논리로 방문 전환율 우위 확보 가능성
-                                    도출</li>
-                            </ul>
-                        </div>
-                        <div class="tab-panel" id="p9-3">
-                            <ul class="checklist">
-                                <li><span class="ck">✓</span>교차로/곡선 구간에서 진행 벡터가 급격히 꺾이는 문제 → 근방 2~3개 포인트 평균 방향 사용으로 보정,
-                                    정확한 스무딩 로직은 추가 설계 필요</li>
-                                <li><span class="ck">✓</span>도로 등급(소로/중로/대로) 판별 시 공공데이터 갱신 주기 한계로 신축 도로 누락 가능성 확인 — 참고
-                                    지표 수준으로 한정</li>
-                                <li><span class="ck">✓</span>동선 효율성 스코어링 가중치(유턴/거리/시간/대로변) 초기값 설정 기준 미확정 — 규칙 기반 가중합으로
-                                    우선 구현 후 조정 예정</li>
-                            </ul>
-                        </div>
+
+                        <p class="progress-title">현재 진행상황</p>
+                        <ul class="checklist">
+                            <li><span class="ck">✓</span>PHASE 0 아이디어 정의 완료 — 프론트엔드 React 확정, 연애·결혼·임신출산·육아를 하나의
+                                타임라인으로 잇는 3챕터 구조 설계</li>
+                            <li><span class="ck">✓</span>결혼 준비 통합 모델(Single Source of Truth)로 체크리스트·일정·예산을 한 곳에서 관리하는
+                                구조 설계</li>
+                            <li><span class="ck">✓</span>역할 기반 공개 범위(RBAC)를 서버 레벨(RLS)에서 강제하는 Privacy by Design 원칙 확정
+                                — 초대 전용 계정 정책</li>
+                            <li><span class="ck">✓</span>MVP 프론트엔드 구현 진행 중 — DB 연결 및 백엔드 코드 연동만 남음</li>
+                        </ul>
                     </div>
                 </article>
             </div>
@@ -2536,7 +2344,9 @@
             <div class="container">
                 <div class="eyebrow reveal">03 <span class="rule"></span> LAB / IDEAS</div>
                 <h2 class="section-title reveal">어떤 생각을 하고 있는가</h2>
-                <p class="section-lead reveal">아직 실무 경험은 없지만, 사용자·도메인을 직접 겪어본 사람으로서 그릴 수 있는 서비스 제안서와 아키텍처 스케치를 모았습니다.
+                <p class="section-lead reveal">아직 실무 경험은 없지만,<br> <strong>사용자·도메인을 직접 겪어본 사람</strong>으로서<br> 그릴 수 있는 서비스
+                    제안서와 아키텍처 스케치를
+                    모았습니다.
                 </p>
 
                 <div class="lab-grid">
@@ -2570,8 +2380,33 @@
 
                     <div class="lab-card reveal">
                         <div class="lab-top">
-                            <span class="lab-kind">HEALTHCARE AI</span>
+                            <span class="lab-kind">IOT / HARDWARE</span>
                             <span class="status">IN PROGRESS</span>
+                        </div>
+                        <h3>도깨비 (Dokkaebi)</h3>
+                        <p class="lab-tagline">한국 설화 모티프의 BLE 태그 기반 스마트 분실물 추적 앱 <br> — "잃어버린 물건은 도깨비가 숨긴 것"</p>
+                        <p class="lab-desc">ESP32 기반 BLE 태그로 GPS 없이 신호 세기만으로 분실물 위치를 추정합니다. 차키=바퀴도깨비, 지갑=금전도깨비처럼
+                            분실물 카테고리별 캐릭터를 전 기능에 매핑한 스토리텔링 UX가 핵심. "마지막 목격 장소", "사탕으로 유인" 등 분실 알림 흐름을 설화 내러티브로
+                            전환해 설계했습니다.</p>
+                        <p class="arch-label">ARCHITECTURE SKETCH</p>
+                        <ul class="arch-tree">
+                            <li>Firmware: ESP32 DevKitC + BLE 신호 세기 기반 위치 추정</li>
+                            <li>Mobile: Android (BLE 스캔 · 캐릭터 UX)</li>
+                            <li>Backend: FastAPI (예정)</li>
+                            <li>Tooling: PlatformIO (검토중)</li>
+                        </ul>
+                        <div class="lab-tags">
+                            <span class="tag">ESP32 DevKitC</span>
+                            <span class="tag">BLE</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">FastAPI</span>
+                        </div>
+                    </div>
+
+                    <div class="lab-card reveal">
+                        <div class="lab-top">
+                            <span class="lab-kind">HEALTHCARE AI</span>
+                            <span class="status">IDEA</span>
                         </div>
                         <h3>ADL Motion Analyzer</h3>
                         <p class="lab-tagline">물리치료사가 설계한 상지 재활 동작 편차 시각화 도구</p>
@@ -2601,7 +2436,7 @@
                     <div class="lab-card reveal">
                         <div class="lab-top">
                             <span class="lab-kind">PROPTECH AI</span>
-                            <span class="status">IN PROGRESS</span>
+                            <span class="status">IDEA</span>
                         </div>
                         <h3>AI Neighborhood Advisor</h3>
                         <p class="lab-tagline">출퇴근·생활 인프라·주거비를 통합 분석하는 AI 기반 주거지역 추천 서비스</p>
@@ -2633,7 +2468,7 @@
                     <div class="lab-card reveal">
                         <div class="lab-top">
                             <span class="lab-kind">HEALTHCARE AI</span>
-                            <span class="status">IN PROGRESS</span>
+                            <span class="status">IDEA</span>
                         </div>
                         <h3>Drug-Food Interaction Analyzer</h3>
                         <p class="lab-tagline">약물-식품 상호작용 분석 기반 개인 맞춤 영양 의사결정 지원 시스템</p>
@@ -2671,7 +2506,9 @@
             <div class="container">
                 <div class="eyebrow reveal">04 <span class="rule"></span> TECH STACK &amp; EXPERIENCE</div>
                 <h2 class="section-title reveal">무엇을 다룰 수 있는가</h2>
-                <p class="section-lead reveal">코드만의 영역에 머무르고 싶지 않습니다. 직접 겪은 비기술 도메인의 경험이 개발자가 만드는 서비스의 깊이를 만든다고 믿습니다.
+                <p class="section-lead reveal">코드만의 영역에 머무르고 싶지 않습니다. <br>직접 겪은 비기술 <strong>도메인의 경험이 개발자가 만드는
+                        서비스</strong>의 깊이를 만든다고
+                    믿습니다.
                 </p>
 
                 <div class="stack-grid">
@@ -2810,65 +2647,226 @@
                     </div>
                     <p class="beyond-sub">개발 바깥의 도메인에서 직접 면허·자격을 따며 익힌 현장 감각.</p>
 
-                    <div class="cert" style="border-top:none; padding-top:6px;">
+                    <p class="cert-group-title">자격사항</p>
+
+                    <div class="cert cert--no-top">
                         <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 12h4l3-7 4 14 3-7h4" />
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
                             </svg></div>
                         <div class="cert-body">
                             <div class="cert-top">
-                                <h4>물리치료사 면허</h4><span>2019</span>
+                                <h4>1종보통 운전면허증</h4><span>2025.09</span>
+                            </div>
+                            <p class="cert-org">경찰청(운전면허시험관리단)</p>
+                        </div>
+                    </div>
+
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>BARISTA SKILL BASIC</h4><span>2024.01</span>
+                            </div>
+                            <p class="cert-org">EUCA</p>
+                        </div>
+                    </div>
+
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>요양보호사 자격증</h4><span>2023.12</span>
                             </div>
                             <p class="cert-org">보건복지부</p>
-                            <p class="cert-desc">병의원 임상 현장을 직접 경험한 의료서비스 전반의 이해</p>
                         </div>
                     </div>
 
                     <div class="cert">
                         <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 11 12 4l9 7" />
-                                <path d="M5 10v10h14V10" />
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
                             </svg></div>
                         <div class="cert-body">
                             <div class="cert-top">
-                                <h4>공인중개사 자격</h4><span>2022</span>
+                                <h4>공인중개사 자격증</h4><span>2021.12</span>
                             </div>
                             <p class="cert-org">한국산업인력공단</p>
-                            <p class="cert-desc">부동산 매물·계약·시세 데이터 도메인 이해</p>
                         </div>
                     </div>
 
                     <div class="cert">
                         <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="1.8">
-                                <path d="M5 4h11v8a5.5 5.5 0 0 1-11 0V4Z" />
-                                <path d="M16 6h2.5a2.5 2.5 0 0 1 0 5H16M7 21h7" />
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
                             </svg></div>
                         <div class="cert-body">
                             <div class="cert-top">
-                                <h4>국제 바리스타 자격</h4><span>2021</span>
+                                <h4>2종보통 운전면허증</h4><span>2017.07</span>
                             </div>
-                            <p class="cert-org">SCA</p>
-                            <p class="cert-desc">F&amp;B / 소상공인 도메인 — 운영 효율과 고객 흐름</p>
+                            <p class="cert-org">경찰청(운전면허시험관리단)</p>
                         </div>
                     </div>
 
                     <div class="cert">
                         <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="1.8">
-                                <circle cx="12" cy="13" r="8" />
-                                <path d="M12 9v4l2.5 2.5M9 2h6" />
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
                             </svg></div>
                         <div class="cert-body">
                             <div class="cert-top">
-                                <h4>기타 자격 · 수료</h4><span>—</span>
+                                <h4>물리치료사 면허증</h4><span>2015.03</span>
                             </div>
-                            <p class="cert-org">Various</p>
-                            <p class="cert-desc">필요할 때마다 도메인을 직접 파고드는 학습 습관</p>
+                            <p class="cert-org">보건복지부</p>
                         </div>
                     </div>
 
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>정보처리기능사</h4><span>2008.02</span>
+                            </div>
+                            <p class="cert-org">한국산업인력공단</p>
+                        </div>
+                    </div>
+
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>워드프로세서 1급 자격</h4><span>2008.01</span>
+                            </div>
+                            <p class="cert-org">대한상공회의소</p>
+                        </div>
+                    </div>
+
+                    <p class="cert-group-title">이수내역</p>
+
+                    <div class="cert cert--no-top">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3 2 8l10 5 10-5-10-5Z" />
+                                <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>건설업 도배전문 인재 양성과정</h4><span>2025.10</span>
+                            </div>
+                            <p class="cert-org">수원특례시</p>
+                            <p class="cert-desc">도배 전문 과정 취득</p>
+                        </div>
+                    </div>
+
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3 2 8l10 5 10-5-10-5Z" />
+                                <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>Women's Integrated Support for Health-Maternity Level1</h4><span>2024.08</span>
+                            </div>
+                            <p class="cert-org">Pelvic Health Korea</p>
+                        </div>
+                    </div>
+
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3 2 8l10 5 10-5-10-5Z" />
+                                <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>Manual Lymph Drainage level 1</h4><span>2023.06</span>
+                            </div>
+                            <p class="cert-org">Dr. vodder school</p>
+                            <p class="cert-desc">도수림프배액법</p>
+                        </div>
+                    </div>
+
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3 2 8l10 5 10-5-10-5Z" />
+                                <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>카이로프랙틱</h4><span>2020.01 ~ 2020.02</span>
+                            </div>
+                            <p class="cert-org">대한도수교정학회</p>
+                            <p class="cert-desc">L/E, U/E, SPINE</p>
+                        </div>
+                    </div>
+
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3 2 8l10 5 10-5-10-5Z" />
+                                <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>PNF PART A &amp; B</h4><span>2017.02 ~ 2017.04</span>
+                            </div>
+                            <p class="cert-org">대한고유수용성신경근촉진학회</p>
+                            <p class="cert-desc">scapula and pelvis, U/E, L/E, neck and Trunk pattern Mat Activity Gait
+                                training</p>
+                        </div>
+                    </div>
+
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3 2 8l10 5 10-5-10-5Z" />
+                                <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>PNF basic course</h4><span>2016.04</span>
+                            </div>
+                            <p class="cert-org">대한고유수용성신경근촉진학회</p>
+                            <p class="cert-desc">운동조절과 학습 PNF 철학</p>
+                        </div>
+                    </div>
+
+                    <div class="cert">
+                        <div class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3 2 8l10 5 10-5-10-5Z" />
+                                <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" />
+                            </svg></div>
+                        <div class="cert-body">
+                            <div class="cert-top">
+                                <h4>Functional manual therapy (FMT)</h4><span>2015.05 ~ 2017.01</span>
+                            </div>
+                            <p class="cert-org">대한기능도수물리치료학회</p>
+                            <p class="cert-desc">척추 및 사지관절 교육 과정 이수 및 자격 취득</p>
+                        </div>
+                    </div>
 
                 </aside>
             </div>
@@ -2882,7 +2880,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="reveal">
-                    <h2 class="footer-cta">함께 하고 싶은<br>아이디어가 있다면 — 언제든.</h2>
+                    <h2 class="footer-cta">함께 하고 싶은<br> 제안이 있다면.</h2>
                     <a class="footer-mail" href="mailto:ji092.zip&#64;gmail&#46;com">ji092.zip&#64;gmail&#46;com
                         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.2">
@@ -2901,7 +2899,7 @@
                             </svg>
                             GitHub
                         </a>
-                        <a href="https://www.notion.so/e172c2546eac8351a5e78147332bc574?v=fd92c2546eac830c8fb088f31be44068&source=copy_link"
+                        <a href="https://app.notion.com/p/ji0_brain-zip-e0c2c2546eac83d6bfd78142f9f8bf8d?source=copy_link"
                             target="_blank" rel="noopener">
                             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="1.8">
@@ -2910,7 +2908,7 @@
                             </svg>
                             Notion
                         </a>
-                        <a href="https://instagram.com/ji0000092" target="_blank" rel="noopener">
+                        <a href="https://instagram.com/ji092.zip" target="_blank" rel="noopener">
                             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="1.8">
                                 <rect x="3" y="3" width="18" height="18" rx="5" />
