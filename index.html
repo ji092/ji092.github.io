@@ -1986,7 +1986,7 @@
                     <div class="project-body">
                         <p class="project-num">PROJECT 03</p>
                         <h3>Flare</h3>
-                        <p class="project-tagline">고속도로 터널 CCTV 화재·연기 감지 AI 모니터링 시스템</p>
+                        <p class="project-tagline">고속도로 CCTV 화재·연기 감지 AI 모니터링 시스템</p>
                         <p class="project-role">⚙ 기획 · AI 모델 · 백엔드 · 인프라</p>
                         <div class="tags">
                             <span class="tag">RT-DETRv2</span><span class="tag">YOLOv8</span><span
@@ -2185,21 +2185,26 @@
                     <div class="project-body">
                         <p class="project-num">PROJECT 02</p>
                         <h3>Argos</h3>
-                        <p class="project-tagline">터널 CCTV 이상 탐지 시스템 — 차량정체·사고·화재·연기 실시간 탐지 및 알림</p>
-                        <p class="project-role">⚙ AI 모델 학습 전담 · 백엔드 · 배포</p>
+                        <p class="project-tagline">고속도로 CCTV 이상 탐지 시스템 — 차량정체·정차·역주행·화재·연기 실시간 탐지 및 알림</p>
+                        <p class="project-role">⚙ AI 모델 · 백엔드 · 배포</p>
                         <div class="tags">
-                            <span class="tag">RT-DETRv2</span><span class="tag">YOLOv5</span><span
-                                class="tag">FastAPI</span><span class="tag">Flask-SocketIO</span><span
-                                class="tag">Next.js</span><span class="tag">Docker Compose</span>
+                            <span class="tag">RT-DETRv2</span><span class="tag">YOLOv8</span><span
+                                class="tag">FastAPI</span><span class="tag">Flask-SocketIO</span><span class="tag">React
+                                18</span><span class="tag">Docker Compose</span>
                         </div>
 
                         <p class="progress-title">현재 진행상황</p>
                         <ul class="checklist">
-                            <li><span class="ck">✓</span>RT-DETRv2 (HGNetv2-L 백본) 객체 탐지 모델 학습 및 최적화 — V3 mAP@50 0.952
-                                달성 (fire 0.983 / smoke 0.939 / carlight 0.936)</li>
-                            <li><span class="ck">✓</span>연기 미탐율 YOLO 대비 4.8배 개선 (RT-DETRv2 39건 vs YOLO 계열 187건)</li>
-                            <li><span class="ck">✓</span>12,853장 / 21,802개 어노테이션 규모 데이터셋 구축 완료</li>
-                            <li><span class="ck">✓</span>야간 헤드라이트 반사광 오탐 프레임을 hard negative로 레이블링하여 V4 재학습 예정</li>
+                            <li><span class="ck">✓</span>화재/연기(RT-DETRv2, ai_server) + 차량(YOLOv8+ByteTrack, backend 로컬)
+                                투트랙 감지 구조 구축 및 연동 완료(2026-07-14~15)</li>
+                            <li><span class="ck">✓</span>차량 판정 로직 4단계 확립: 정체(congestion) / 정차(stopped_vehicle) /
+                                위험정차(danger_stopped, 3분 이상) / 역주행(wrong_way)</li>
+                            <li><span class="ck">✓</span>역주행(wrong_way): 버스트 캡처(150ms A/B 프레임) + 카메라별 자가학습 방향지도(EMA)로 수동
+                                캘리브레이션 없이 후보 판정 → 알림·DB저장·오버레이까지 전체 배선 완료</li>
+                            <li><span class="ck">⏳</span> Docker 배포 전환 남음 — docker-compose.yml이 아직 옛 구조(PostgreSQL+CPU)
+                                기준이라 TiDB 반영, GPU(ai_server) 컨테이너 설정, 포트 수정 필요</li>
+                            <li><span class="ck">⏳</span> 시연용 테스트 엔드포인트(/test-fire, /test-alert) 배포 전 인증 가드 또는 제거 필요
+                            </li>
                         </ul>
                     </div>
                 </article>
@@ -2229,9 +2234,13 @@
                         <p class="progress-title">현재 진행상황</p>
                         <ul class="checklist">
                             <li><span class="ck">✓</span>Tauri(Rust) 기반 경량 데스크탑 앱 구축</li>
-                            <li><span class="ck">✓</span>pywin32를 활용한 Windows 창 수집 및 제어</li>
-                            <li><span class="ck">✓</span>Ollama + Qwen3 8B 로컬 LLM 연동 (외부 데이터 전송 없음)</li>
-                            <li><span class="ck">✓</span>Rule Engine → LLM 분리 설계 (판단은 룰 엔진, 자연어 생성만 LLM)</li>
+                            <li><span class="ck">✓</span>pywin32를 활용한 Windows 창 수집 및 실시간 상태 판별·제어</li>
+                            <li><span class="ck">✓</span>프로젝트별 창(exe/URL/터미널) 등록 및 원클릭 실행·활성화</li>
+                            <li><span class="ck">✓</span> Notion API 연동 — 프로젝트별 Todo 조회 및 체크</li>
+                            <li><span class="ck">⏳</span> 캘린더 + 교통 알림 (Google Calendar · 티맵/네이버지도 · 카카오 API) — Phase 3
+                            </li>
+                            <li><span class="ck">⏳</span> Ollama + Qwen3 8B 로컬 LLM 연동 — Phase 4</li>
+                            <li><span class="ck">⏳</span> Rule Engine → LLM 분리 설계 (판단은 룰 엔진, 자연어 생성만 LLM) — Phase 5</li>
                         </ul>
                     </div>
                 </article>
@@ -2254,17 +2263,20 @@
                         <p class="project-role">⚙ PM · AI 모델 · 기획</p>
                         <div class="tags">
                             <span class="tag">MediaPipe</span><span class="tag">Python</span><span
-                                class="tag">OpenCV</span><span class="tag">ADB</span>
+                                class="tag">OpenCV</span><span class="tag">Flask/WebSocket</span><span
+                                class="tag">ADB</span>
                         </div>
 
                         <p class="progress-title">현재 진행상황</p>
                         <ul class="checklist">
                             <li><span class="ck">✓</span>Level 1 완료: 화면 미러링 + ADB 마우스 원격제어</li>
-                            <li><span class="ck">✓</span>11개 제스처 매핑 확정 (기본 모드 9개 + 전화 모드 2개), MediaPipe Hands
+                            <li><span class="ck">✓</span>제스처 매핑 확정 (기본 모드 + 전화 모드), MediaPipe Hands
                                 21-landmark 좌표 추출 기반 인식</li>
-                            <li><span class="ck">✓</span>퍼유저 캘리브레이션 (5샘플 평균 → calibration.json 저장)</li>
-                            <li><span class="ck">✓</span>gesture_recognizer.task 모델 파일 부재 시 graceful degradation 구현 (11개
-                                중 7개 정상 동작)</li>
+                            <li><span class="ck">✓</span>퍼유저 캘리브레이션 (샘플 평균 → calibration.json 저장)</li>
+                            <li><span class="ck">✓</span>내장 제스처 모델 파일 부재 시 graceful degradation 구현
+                                (커스텀 규칙 기반 제스처는 정상 동작)</li>
+                            <li><span class="ck">⏳</span>Level 2 실기기 최종 검증 (터치·샤카 제스처 정확도 개선 후 재측정)</li>
+                            <li><span class="ck">⏳</span>Level 3: MediaPipe FaceMesh 기반 아이트래킹 설계 및 구현</li>
                         </ul>
                     </div>
                 </article>
@@ -2272,7 +2284,7 @@
                 <article class="project reveal">
                     <div class="project-media">
                         <div class="project-thumb">
-                            <span class="date-badge">08 · 2026.06 — 기획중</span>
+                            <span class="date-badge">08 · 2026.07 — 설계 완료 · 개발 착수</span>
                             <img src="project9.png" alt="가는 길에 미리보기"
                                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
                             <span class="thumb-fallback" style="display:none;">PROJECT IMAGE<br>project9.png</span>
@@ -2284,19 +2296,34 @@
                         <h3>가는 길에 (On the Way)</h3>
                         <p class="project-tagline">"내 주변"이 아닌 "내가 실제로 이동하는 경로"를 검색하는 경로 기반 스마트 경유지 추천 &amp; 내비 연동 서비스
                         </p>
-                        <p class="project-role">⚙ 1인 기획 전담 (서비스 기획 · 공간데이터 설계 · BM 설계)</p>
+                        <p class="project-role">⚙ 1인 기획·개발 전담 (서비스 기획 · 공간데이터 설계 · 백엔드 개발 · BM 설계)</p>
                         <div class="tags">
-                            <span class="tag">PostGIS</span><span class="tag">카카오내비 API</span><span class="tag">TMAP
-                                API</span><span class="tag">공간 쿼리</span><span class="tag">Route-based Search</span>
+                            <span class="tag">FastAPI</span><span class="tag">PostGIS</span><span class="tag">카카오맵
+                                API</span><span class="tag">카카오모빌리티 API</span><span class="tag">Route-based
+                                Search</span>
                         </div>
 
                         <p class="progress-title">현재 진행상황</p>
                         <ul class="checklist">
-                            <li><span class="ck">✓</span>문제 정의 → 핵심 기능 → 기술 실현 가능성 → BM까지 아우르는 통합 기획서 작성 완료</li>
-                            <li><span class="ck">✓</span>Phase 1(MVP) / Phase 2(ML 고도화) 스코프 분리로 개발 우선순위 명확화</li>
-                            <li><span class="ck">✓</span>경로(LineString) 기반 Buffer 공간 쿼리·진행 방향 판별 로직 설계 완료</li>
-                            <li><span class="ck">✓</span>동선 효율성 스코어링 가중치(유턴/거리/시간/대로변) 초기값은 규칙 기반 가중합으로 우선 구현 후 조정
-                                예정</li>
+                            <li><span class="ck">✓</span>문제 정의 → 핵심 기능 → 기술 실현 가능성 검증 → BM까지, SRS·기능명세·아키텍처 등 설계 문서
+                                8종 작성 완료</li>
+                            <li><span class="ck">✓</span>공식 문서 대조 검증으로 설계 리스크 선제 확인 — 카카오 로컬 API 결과 DB 저장은 약관 위반임을
+                                확인해 PostGIS는 자체 데이터 전용으로, 웹에서는 카카오내비 경유지 미지원을 확인해 카카오맵 앱 스킴(vp 파라미터) 연동으로
+                                아키텍처 확정</li>
+                            <li><span class="ck">✓</span>경로 기반 POI 검색 파이프라인(샘플링 → 다중 소반경 검색 → 45개 상한 시 4분할 재검색 →
+                                버퍼 필터링) 백엔드(FastAPI) 구현 완료</li>
+                            <li><span class="ck">✓</span>외적(Cross Product) 기반 진행 방향 판별 로직 구현 — 급커브 구간 오판정 방지(UNKNOWN
+                                처리) 및 self-check 테스트 통과</li>
+                        </ul>
+                        <p class="progress-title">아직 해결해야 할 과제</p>
+                        <ul class="checklist">
+                            <li><span class="ck">⏳</span>카카오 REST API 키 발급 및 실제 API 연동 검증 (경로 조회 · POI 검색 실호출
+                                테스트 미완료)</li>
+                            <li><span class="ck">⏳</span>프론트엔드 미착수 — React + Vite 기반 지도 화면, 검색·결과 UI, 카카오맵 앱 연동
+                                버튼 구현 필요</li>
+                            <li><span class="ck">⏳</span>PostGIS 도입 및 드라이브스루 매장 크롤러·도로 등급 공공데이터 적재(batch) 미착수</li>
+                            <li><span class="ck">⏳</span>카카오 API 무료 쿼터 실측 및 캐싱 전략 검증, 카카오맵 앱 스킴 경유지(vp) 실기기 동작
+                                확인 필요</li>
                         </ul>
                     </div>
                 </article>
